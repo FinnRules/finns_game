@@ -1,0 +1,15 @@
+Design Principles for Finn's Game (in no particular order):
+
+Accessability: The game and its metaphors and mechanics should be accessable to those familiar with MTG and MC
+
+Bias towards multiplayer: The game should not depend on multiplayer, but it should be designed to best suit those needs
+
+Mod compatibility: The game should aim to be as compatible as is reasonably possible with MTG based mods through the use of aliases
+
+Pro Variety: The game should cater towards those who see variety as a fun element, for building or for play in general
+
+Reasonably Grounded: The game should contain (unmodded) elements that do not depart from real life elements (to an unreasonable degree). These elements can have unique properties. The game should also not include elements original only to MTG or MC
+
+Reward Exploration: The game should reward exploration of new terrains and attempt to present new reasons to explore (through generated structures and hard to find crops)
+
+Playable Upgrade Path: The game should be playable upon spawning, and never devolve into grinding. Rare items should not be unfindable if ever necessary
