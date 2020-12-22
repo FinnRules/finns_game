@@ -42,13 +42,16 @@ fmain.gui_survival_form = "size[8,8.5]"..
 			fmain.get_hotbar_bg(0,4.25)
 
 
-
+--Base operations
 dofile(fmain.path .. "/hand.lua")
 dofile(fmain.path .. "/functions.lua")
+--Nodes and craftitems
 dofile(fmain.path .. "/nodes.lua")
-dofile(fmain.path .. "/biomes.lua")
+dofile(fmain.path .. "/wood.lua")
 dofile(fmain.path .. "/furnace.lua")
 dofile(fmain.path .. "/chests.lua")
-dofile(fmain.path .. "/torch.lua")
 dofile(fmain.path .. "/craftitems.lua")
+dofile(fmain.path .. "/torch.lua")
 dofile(fmain.path .. "/crafting.lua")
+--Mapgen
+dofile(fmain.path .. "/biomes.lua")
