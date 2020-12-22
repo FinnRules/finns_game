@@ -151,3 +151,74 @@ minetest.register_biome({
 		humidity_point = 45,
 })
 ]]
+
+
+minetest.register_biome({
+        name = "redwood_forest",
+        node_top = "fmain:dirt_with_grass",
+        depth_top = 1,
+        node_filler = "fmain:dirt",
+        depth_filler = 1,
+        node_riverbed = "fmain:gravel",
+        depth_riverbed = 2,
+        y_max = 100,
+        y_min = 0,
+        heat_point = 60,
+        humidity_point = 55,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.02,
+    biomes = {"redwood_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/redwood_large.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    
+})
+
+--Cherry Blossom Forest
+minetest.register_biome({
+        name = "cherry_blossom_forest",
+        node_top = "fmain:dirt_with_grass",
+        depth_top = 1,
+        node_filler = "fmain:dirt",
+        depth_filler = 5,
+        node_stone = "fmain:stone",
+        node_riverbed = "fmain:dirt",
+        depth_riverbed = 2,
+        y_max = 40,
+        y_min = 0,
+        heat_point = 45,
+        humidity_point = 27,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.0075,
+    biomes = {"cherry_blossom_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/cherry_tree.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.0075,
+    biomes = {"cherry_blossom_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/cherry_tree_white.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})

@@ -27,7 +27,14 @@ minetest.register_node("fmain:cobble", {
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
 })
-
+--[[
+minetest.register_node("fmain:bluestone_cobble", {
+	description = "Bluestone Cobblestone",
+	tiles = {"fmain_bluestone_cobble.png"},
+	is_ground_content = false,
+	groups = {cracky = 3, stone = 2},
+})
+]]
 --Dirt (not including sand)
 minetest.register_node("fmain:dirt", {
 	description = "Dirt",
@@ -299,4 +306,229 @@ minetest.register_node("fmain:redwood_planks", {
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 --	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("fmain:redwood_leaves", {
+    description = "Redwood Tree Leaves",
+    drawtype = "allfaces_optional",
+    waving = 1,
+    tiles = {"fmain_redwood_leaves.png"},
+    paramtype = "light",
+    is_ground_content = false,
+    groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+    drop = {
+        max_items = 1,
+        items = {
+            {
+                -- player will get sapling with 1/20 chance
+                items = {"fmain:redwood_sapling"}, 
+                rarity = 20,
+            },
+            {
+                -- player will get leaves only if he get no saplings,
+                -- this is because max_items is 1
+                items = {"fmain:redwood_leaves"},
+            }
+        }
+    },
+--    sounds = default.node_sound_leaves_defaults(),
+
+    after_place_node = after_place_leaves,
+})
+
+
+--Poplar
+minetest.register_node("fmain:poplar_wood", {
+    description = "Poplar Wood",
+    tiles = {
+        "fmain_poplar_core.png", 
+        "fmain_poplar_core.png", 
+        "fmain_poplar_bark.png",
+        "fmain_poplar_bark.png",
+        "fmain_poplar_bark.png",
+        "fmain_poplar_bark.png",
+        
+    },
+    paramtype2 = "facedir",
+    is_ground_content = false,
+    groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+--    sounds = default.node_sound_wood_defaults(),
+
+    on_place = minetest.rotate_node
+})
+
+minetest.register_node("fmain:poplar_planks", {
+    description = "Poplar Planks",
+    paramtype2 = "facedir",
+    place_param2 = 0,
+    tiles = {"fmain_poplar_planks.png"},
+    is_ground_content = false,
+    groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+--    sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("fmain:poplar_leaves", {
+    description = "Poplar Tree Leaves",
+    drawtype = "allfaces_optional",
+    waving = 1,
+    tiles = {"fmain_poplar_leaves.png"},
+    paramtype = "light",
+    is_ground_content = false,
+    groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+    drop = {
+        max_items = 1,
+        items = {
+            {
+                -- player will get sapling with 1/20 chance
+                items = {"fmain:poplar_sapling"}, 
+                rarity = 20,
+            },
+            {
+                -- player will get leaves only if he get no saplings,
+                -- this is because max_items is 1
+                items = {"fmain:poplar_leaves"},
+            }
+        }
+    },
+--    sounds = default.node_sound_leaves_defaults(),
+
+    after_place_node = after_place_leaves,
+})
+
+--Ladder
+
+minetest.register_node("fmain:ladder", {
+	description = "Ladder",
+	drawtype = "signlike",
+	tiles = {"fmain_ladder.png"},
+	inventory_image = "fmain_ladder.png",
+	wield_image = "fmain_ladder.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy = 2, oddly_breakable_by_hand = 3, flammable = 2},
+	legacy_wallmounted = true,
+--	sounds = default.node_sound_wood_defaults(),
+})
+
+
+fmain.register_fence("fmain:redwood_fence", {
+	description = "Redwood Planks Fence",
+	texture = "fmain_redwood_fence.png",
+	inventory_image = "fmain_fence_overlay.png^fmain_redwood_planks.png^" ..
+				"fmain_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "fmain_fence_overlay.png^fmain_redwood_planks.png^" ..
+				"fmain_fence_overlay.png^[makealpha:255,126,126",
+	material = "fmain:redwood_planks",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+--	sounds = default.node_sound_wood_defaults()
+})
+
+--Cherry Wood and leaves
+minetest.register_node("fmain:cherry_wood", {
+    description = "Cherry Wood",
+    tiles = {
+        "fmain_cherry_core.png", 
+        "fmain_cherry_core.png", 
+        "fmain_cherry_bark.png",
+        "fmain_cherry_bark.png",
+        "fmain_cherry_bark.png",
+        "fmain_cherry_bark.png",
+        
+    },
+    paramtype2 = "facedir",
+    is_ground_content = false,
+    groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+--    sounds = default.node_sound_wood_defaults(),
+
+    on_place = minetest.rotate_node
+})
+
+minetest.register_node("fmain:cherry_blossoms", {
+    description = "Cherry Blossoms",
+    drawtype = "allfaces_optional",
+    waving = 1,
+    tiles = {"fmain_cherry_blossoms.png"},
+    paramtype = "light",
+    is_ground_content = false,
+    groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+    drop = {
+        max_items = 1,
+        items = {
+            {
+                -- player will get sapling with 1/20 chance
+                items = {"fmain:cherry_sapling"}, 
+                rarity = 20,
+            },
+            {
+                -- player will get leaves only if he get no saplings,
+                -- this is because max_items is 1
+                items = {"fmain:cherry_blossoms"},
+            }
+        }
+    },
+--    sounds = default.node_sound_leaves_defaults(),
+
+    after_place_node = after_place_leaves,
+})
+
+minetest.register_node("fmain:dirt_with_blossoms", {
+    description = "Dirt with Cherry Blossoms",
+    tiles = {"fmain_grass.png^fmain_dirt_cherry.png", "fmain_dirt.png",
+        {name = "fmain_dirt.png^fmain_grass_side.png",
+            tileable_vertical = false}},
+    groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
+    drop = "fmain:dirt",
+--    sounds = default.node_sound_dirt_defaults({
+--        footstep = {name = "default_grass_footstep", gain = 0.25},
+--    }),
+})
+
+minetest.register_node("fmain:cherry_white_blossoms", {
+    description = "White Cherry Blossoms",
+    drawtype = "allfaces_optional",
+    waving = 1,
+    tiles = {"fmain_cherry_white_blossoms.png"},
+    paramtype = "light",
+    is_ground_content = false,
+    groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+    drop = {
+        max_items = 1,
+        items = {
+            {
+                -- player will get sapling with 1/20 chance
+                items = {"fmain:cherry_sapling"}, 
+                rarity = 20,
+            },
+            {
+                -- player will get leaves only if he get no saplings,
+                -- this is because max_items is 1
+                items = {"fmain:cherry_white_blossoms"},
+            }
+        }
+    },
+--    sounds = default.node_sound_leaves_defaults(),
+
+    after_place_node = after_place_leaves,
+})
+
+minetest.register_node("fmain:dirt_with_white_blossoms", {
+    description = "Dirt with White Cherry Blossoms",
+    tiles = {"fmain_grass.png^fmain_dirt_cherry_white.png", "fmain_dirt.png",
+        {name = "fmain_dirt.png^fmain_grass_side.png",
+            tileable_vertical = false}},
+    groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
+    drop = "fmain:dirt",
+--    sounds = default.node_sound_dirt_defaults({
+--        footstep = {name = "default_grass_footstep", gain = 0.25},
+--    }),
 })

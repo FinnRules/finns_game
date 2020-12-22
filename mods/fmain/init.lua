@@ -44,9 +44,11 @@ fmain.gui_survival_form = "size[8,8.5]"..
 
 
 dofile(fmain.path .. "/hand.lua")
+dofile(fmain.path .. "/functions.lua")
 dofile(fmain.path .. "/nodes.lua")
 dofile(fmain.path .. "/biomes.lua")
-dofile(fmain.path .. "/functions.lua")
 dofile(fmain.path .. "/furnace.lua")
 dofile(fmain.path .. "/chests.lua")
 dofile(fmain.path .. "/torch.lua")
+dofile(fmain.path .. "/craftitems.lua")
+dofile(fmain.path .. "/crafting.lua")

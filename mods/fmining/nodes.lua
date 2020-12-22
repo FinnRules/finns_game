@@ -66,3 +66,20 @@ minetest.register_node("fmining:lapis_ore", {
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
+
+minetest.register_node("fmining:tungsten_ore", {
+	description = "Tungsten Ore",
+	tiles = {"fmain_stone.png^fmining_tungsten_ore.png"},
+	groups = {cracky = 3, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("fmining:opal_ore", {
+	description = "Opal Ore",
+	tiles = {"fmain_stone.png^fmining_opal_ore.png"},
+	groups = {cracky = 3, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})
+
