@@ -64,9 +64,9 @@ minetest.register_biome({
 		name = "black_sand_beach",
 		node_top = "fmain:black_sand",
 		depth_top = 5,
-		node_filler = "fmain:black_sand",
-		depth_filler = 1,
-		node_stone = "fmain:black_sandstone",
+		node_filler = "fmain:black_sandstone",
+		depth_filler = 5,
+--		node_stone = "fmain:black_sandstone",
 		node_riverbed = "fmain:black_sand",
 		depth_riverbed = 2,
 		y_max = 15,
@@ -219,6 +219,36 @@ minetest.register_decoration({
     y_max = 150,
     y_min = 1,
     schematic = fmain.path .. "/schematics/cherry_tree_white.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+
+--White Oak forest
+minetest.register_biome({
+        name = "white_forest",
+        node_top = "fmain:dirt_with_grass",
+        depth_top = 1,
+        node_filler = "fmain:dirt",
+        depth_filler = 5,
+        node_stone = "fmain:stone",
+        node_riverbed = "fmain:dirt",
+        depth_riverbed = 2,
+        y_max = 40,
+        y_min = 0,
+        heat_point = 27,
+        humidity_point = 30,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.0075,
+    biomes = {"white_oak_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/white_oak_1.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })

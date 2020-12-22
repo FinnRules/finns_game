@@ -14,6 +14,9 @@ fmain_redwood_planks.png
 fmain_cherry_core.png
 fmain_cherry_bark.png
 fmain_cherry_blossoms.png
+fmain_weepingwillow_bark.png
+fmain_weepingwillow_core.png
+fmain_weepingwillow_leaves.png
 
 Emetchi from milcerine CC-BY-SA 3.0
 fmain_black_sandstone.png
@@ -73,6 +76,7 @@ fmain_stone.png
 fmain_poplar_bark.png
 fmain_poplar_core.png
 fmain_poplar_planks.png
+fmain_poplar_leaves.png
 
 C0nfluxx from milcerine CC-BY-SA:
 fmain_white_sand.png

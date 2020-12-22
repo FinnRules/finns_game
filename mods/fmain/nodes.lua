@@ -532,3 +532,118 @@ minetest.register_node("fmain:dirt_with_white_blossoms", {
 --        footstep = {name = "default_grass_footstep", gain = 0.25},
 --    }),
 })
+
+--Weeping Willow
+minetest.register_node("fmain:weeping_willow_wood", {
+	description = "Weeping Willow Wood",
+	tiles = {
+		"fmain_weepingwillow_core.png", 
+		"fmain_weepingwillow_core.png", 
+		"fmain_weepingwillow_bark.png",
+		"fmain_weepingwillow_bark.png",
+		"fmain_weepingwillow_bark.png",
+		"fmain_weepingwillow_bark.png",
+		
+	},
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+--	sounds = default.node_sound_wood_defaults(),
+
+	on_place = minetest.rotate_node
+})
+
+minetest.register_node("fmain:weeping_willow_leaves", {
+    description = "Weeping Willow Leaves",
+    drawtype = "allfaces_optional",
+    waving = 1,
+    tiles = {"fmain_weepingwillow_leaves.png"},
+    paramtype = "light",
+    is_ground_content = false,
+    groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+    drop = {
+        max_items = 1,
+        items = {
+            {
+                -- player will get sapling with 1/20 chance
+                items = {"fmain:weeping_willow_sapling"}, 
+                rarity = 20,
+            },
+            {
+                -- player will get leaves only if he get no saplings,
+                -- this is because max_items is 1
+                items = {"fmain:weeping_willow_leaves"},
+            }
+        }
+    },
+--    sounds = default.node_sound_leaves_defaults(),
+
+    after_place_node = after_place_leaves,
+})
+
+
+minetest.register_node("fmain:weeping_willow_planks", {
+    description = "Weeping Willow Planks",
+    paramtype2 = "facedir",
+    place_param2 = 0,
+    tiles = {"fmain_weeping_willow_planks.png"},
+    is_ground_content = false,
+    groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+--    sounds = default.node_sound_wood_defaults(),
+})
+
+--White Oak
+minetest.register_node("fmain:white_oak_wood", {
+	description = "White Oak Wood",
+	tiles = {
+		"fmain_white_oak_core.png", 
+		"fmain_white_oak_core.png", 
+		"fmain_white_oak_bark.png",
+		"fmain_white_oak_bark.png",
+		"fmain_white_oak_bark.png",
+		"fmain_white_oak_bark.png",
+		
+	},
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+--	sounds = default.node_sound_wood_defaults(),
+
+	on_place = minetest.rotate_node
+})
+
+minetest.register_node("fmain:white_oak_leaves", {
+    description = "White Oak Leaves",
+    drawtype = "allfaces_optional",
+    waving = 1,
+    tiles = {"fmain_white_oak_leaves.png"},
+    paramtype = "light",
+    is_ground_content = false,
+    groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+    drop = {
+        max_items = 1,
+        items = {
+            {
+                -- player will get sapling with 1/20 chance
+                items = {"fmain:white_oak_sapling"}, 
+                rarity = 20,
+            },
+            {
+                -- player will get leaves only if he get no saplings,
+                -- this is because max_items is 1
+                items = {"fmain:white_oak_leaves"},
+            }
+        }
+    },
+--    sounds = default.node_sound_leaves_defaults(),
+
+    after_place_node = after_place_leaves,
+})
+
+--Obsidian
+minetest.register_node("fmain:obsidian", {
+	description = "Obsidian",
+	tiles = {"fmain_obsidian.png"},
+--	sounds = default.node_sound_stone_defaults(),
+	groups = {cracky = 3, level = 2},
+})
