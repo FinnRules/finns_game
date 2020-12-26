@@ -55,7 +55,7 @@ minetest.register_decoration({
     biomes = {"maple_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/maple_tree.mts",
+    schematic = fmain.path .. "/schematics/maple_tree_adj.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -175,7 +175,7 @@ minetest.register_decoration({
     biomes = {"redwood_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/redwood_large.mts",
+    schematic = fmain.path .. "/schematics/redwood_tree_adj.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
     
@@ -205,7 +205,7 @@ minetest.register_decoration({
     biomes = {"cherry_blossom_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/cherry_tree.mts",
+    schematic = fmain.path .. "/schematics/cherry_tree_adj.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -218,7 +218,7 @@ minetest.register_decoration({
     biomes = {"cherry_blossom_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/cherry_tree_white.mts",
+    schematic = fmain.path .. "/schematics/cherry_tree_white_adj.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -248,7 +248,75 @@ minetest.register_decoration({
     biomes = {"white_oak_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/white_oak_1.mts",
+    schematic = fmain.path .. "/schematics/white_oak_tree_adj.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+minetest.register_biome({
+        name = "mixed_forest",
+        node_top = "fmain:dirt_with_grass",
+        depth_top = 1,
+        node_filler = "fmain:dirt",
+        depth_filler = 5,
+        node_stone = "fmain:stone",
+        node_riverbed = "fmain:dirt",
+        depth_riverbed = 2,
+        y_max = 40,
+        y_min = 0,
+        heat_point = 50,
+        humidity_point = 60,
+})
+
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.0035,
+    biomes = {"mixed_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/weeping_willow_tree_adj.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.0035,
+    biomes = {"mixed_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/poplar_tree_adj.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.0015,
+    biomes = {"mixed_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/poplar_tree_alt1_adj.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 16,
+    fill_ratio = 0.0035,
+    biomes = {"mixed_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/maple_tree_green_adj.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })

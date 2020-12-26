@@ -47,11 +47,13 @@ dofile(fmain.path .. "/hand.lua")
 dofile(fmain.path .. "/functions.lua")
 --Nodes and craftitems
 dofile(fmain.path .. "/nodes.lua")
+dofile(fmain.path .. "/liquids.lua")
 dofile(fmain.path .. "/wood.lua")
 dofile(fmain.path .. "/furnace.lua")
 dofile(fmain.path .. "/chests.lua")
 dofile(fmain.path .. "/craftitems.lua")
 dofile(fmain.path .. "/torch.lua")
 dofile(fmain.path .. "/crafting.lua")
+dofile(fmain.path .. "/saplings.lua")
 --Mapgen
 dofile(fmain.path .. "/biomes.lua")

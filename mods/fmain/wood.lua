@@ -9,6 +9,12 @@ Containing:
 - Fence
 
 Sorted by wood type
+Maple
+Redwood
+Poplar
+Cherry
+Weeping Willow
+White Oak
 	
 ]]
 
@@ -29,7 +35,7 @@ minetest.register_node("fmain:maple_wood", {
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
---	sounds = default.node_sound_wood_defaults(),
+	sounds = fmain.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
 })
@@ -41,7 +47,7 @@ minetest.register_node("fmain:maple_planks", {
 	tiles = {"fmain_maple_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
---	sounds = default.node_sound_wood_defaults(),
+	sounds = fmain.node_sound_wood_defaults(),
 })
 
 minetest.register_node("fmain:maple_leaves", {
@@ -57,7 +63,7 @@ minetest.register_node("fmain:maple_leaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {"fmain:maple_wood"}, --DO NOT FORGET TO FIX ME, I should be a sapling
+				items = {"fmain:maple_sapling"}, --DO NOT FORGET TO FIX ME, I should be a sapling
 				rarity = 20,
 			},
 			{
@@ -72,7 +78,45 @@ minetest.register_node("fmain:maple_leaves", {
 	after_place_node = after_place_leaves,
 })
 
+minetest.register_node("fmain:maple_leaves_green", {
+	description = "Green Maple Tree Leaves",
+	drawtype = "allfaces_optional",
+	waving = 1,
+	tiles = {"fmain_maple_leaves_green.png"},
+	paramtype = "light",
+	is_ground_content = false,
+	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				-- player will get sapling with 1/20 chance
+				items = {"fmain:maple_sapling"}, --DO NOT FORGET TO FIX ME, I should be a sapling
+				rarity = 20,
+			},
+			{
+				-- player will get leaves only if he get no saplings,
+				-- this is because max_items is 1
+				items = {"fmain:maple_leaves_green"},
+			}
+		}
+	},
+--	sounds = default.node_sound_leaves_defaults(),
 
+	after_place_node = after_place_leaves,
+})
+
+fmain.register_fence("fmain:maple_wood_fence", {
+    description = "Maple Wood Fence",
+    texture = "fmain_maple_fence.png",
+    inventory_image = "fmain_fence_overlay.png^fmain_maple_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    wield_image = "fmain_fence_overlay.png^fmain_maple_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    material = "fmain:maple_planks",
+    groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+    sounds = fmain.node_sound_wood_defaults()
+})
 
 --Redwood
 
@@ -90,7 +134,7 @@ minetest.register_node("fmain:redwood_wood", {
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
---	sounds = default.node_sound_wood_defaults(),
+	sounds = fmain.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
 })
@@ -102,7 +146,7 @@ minetest.register_node("fmain:redwood_planks", {
 	tiles = {"fmain_redwood_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
---	sounds = default.node_sound_wood_defaults(),
+	sounds = fmain.node_sound_wood_defaults(),
 })
 
 minetest.register_node("fmain:redwood_leaves", {
@@ -128,7 +172,7 @@ minetest.register_node("fmain:redwood_leaves", {
             }
         }
     },
---    sounds = default.node_sound_leaves_defaults(),
+--    sounds = fmain.node_sound_leaves_defaults(),
 
     after_place_node = after_place_leaves,
 })
@@ -142,7 +186,7 @@ fmain.register_fence("fmain:redwood_fence", {
 				"fmain_fence_overlay.png^[makealpha:255,126,126",
 	material = "fmain:redwood_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
---	sounds = default.node_sound_wood_defaults()
+	sounds = fmain.node_sound_wood_defaults()
 })
 
 
@@ -163,7 +207,7 @@ minetest.register_node("fmain:poplar_wood", {
     paramtype2 = "facedir",
     is_ground_content = false,
     groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
---    sounds = default.node_sound_wood_defaults(),
+    sounds = fmain.node_sound_wood_defaults(),
 
     on_place = minetest.rotate_node
 })
@@ -175,7 +219,7 @@ minetest.register_node("fmain:poplar_planks", {
     tiles = {"fmain_poplar_planks.png"},
     is_ground_content = false,
     groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
---    sounds = default.node_sound_wood_defaults(),
+    sounds = fmain.node_sound_wood_defaults(),
 })
 
 minetest.register_node("fmain:poplar_leaves", {
@@ -201,12 +245,22 @@ minetest.register_node("fmain:poplar_leaves", {
             }
         }
     },
---    sounds = default.node_sound_leaves_defaults(),
+--    sounds = fmain.node_sound_leaves_defaults(),
 
     after_place_node = after_place_leaves,
 })
 
-
+fmain.register_fence("fmain:poplar_wood_fence", {
+    description = "Poplar Wood Fence",
+    texture = "fmain_poplar_fence.png",
+    inventory_image = "fmain_fence_overlay.png^fmain_poplar_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    wield_image = "fmain_fence_overlay.png^fmain_poplar_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    material = "fmain:poplar_planks",
+    groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+    sounds = fmain.node_sound_wood_defaults()
+})
 
 --Cherry
 
@@ -224,7 +278,7 @@ minetest.register_node("fmain:cherry_wood", {
     paramtype2 = "facedir",
     is_ground_content = false,
     groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
---    sounds = default.node_sound_wood_defaults(),
+    sounds = fmain.node_sound_wood_defaults(),
 
     on_place = minetest.rotate_node
 })
@@ -236,7 +290,7 @@ minetest.register_node("fmain:cherry_planks", {
     tiles = {"fmain_cherry_planks.png"},
     is_ground_content = false,
     groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
---    sounds = default.node_sound_wood_defaults(),
+    sounds = fmain.node_sound_wood_defaults(),
 })
 
 minetest.register_node("fmain:cherry_blossoms", {
@@ -262,7 +316,7 @@ minetest.register_node("fmain:cherry_blossoms", {
             }
         }
     },
---    sounds = default.node_sound_leaves_defaults(),
+--    sounds = fmain.node_sound_leaves_defaults(),
 
     after_place_node = after_place_leaves,
 })
@@ -290,30 +344,40 @@ minetest.register_node("fmain:cherry_white_blossoms", {
             }
         }
     },
---    sounds = default.node_sound_leaves_defaults(),
+--    sounds = fmain.node_sound_leaves_defaults(),
 
     after_place_node = after_place_leaves,
 })
 
-
+fmain.register_fence("fmain:cherry_wood_fence", {
+    description = "Cherry Wood Fence",
+    texture = "fmain_cherry_fence.png",
+    inventory_image = "fmain_fence_overlay.png^fmain_cherry_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    wield_image = "fmain_fence_overlay.png^fmain_cherry_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    material = "fmain:cherry_planks",
+    groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+    sounds = fmain.node_sound_wood_defaults()
+})
 
 --Weeping Willow
 
 minetest.register_node("fmain:weeping_willow_wood", {
 	description = "Weeping Willow Wood",
 	tiles = {
-		"fmain_weepingwillow_core.png", 
-		"fmain_weepingwillow_core.png", 
-		"fmain_weepingwillow_bark.png",
-		"fmain_weepingwillow_bark.png",
-		"fmain_weepingwillow_bark.png",
-		"fmain_weepingwillow_bark.png",
+		"fmain_weeping_willow_core.png", 
+		"fmain_weeping_willow_core.png", 
+		"fmain_weeping_willow_bark.png",
+		"fmain_weeping_willow_bark.png",
+		"fmain_weeping_willow_bark.png",
+		"fmain_weeping_willow_bark.png",
 		
 	},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
---	sounds = default.node_sound_wood_defaults(),
+	sounds = fmain.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
 })
@@ -325,14 +389,14 @@ minetest.register_node("fmain:weeping_willow_planks", {
     tiles = {"fmain_weeping_willow_planks.png"},
     is_ground_content = false,
     groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
---    sounds = default.node_sound_wood_defaults(),
+    sounds = fmain.node_sound_wood_defaults(),
 })
 
 minetest.register_node("fmain:weeping_willow_leaves", {
     description = "Weeping Willow Leaves",
     drawtype = "allfaces_optional",
     waving = 1,
-    tiles = {"fmain_weepingwillow_leaves.png"},
+    tiles = {"fmain_weeping_willow_leaves.png"},
     paramtype = "light",
     is_ground_content = false,
     groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
@@ -351,11 +415,22 @@ minetest.register_node("fmain:weeping_willow_leaves", {
             }
         }
     },
---    sounds = default.node_sound_leaves_defaults(),
+--    sounds = fmain.node_sound_leaves_defaults(),
 
     after_place_node = after_place_leaves,
 })
 
+fmain.register_fence("fmain:weeping_willow_wood_fence", {
+    description = "Weeping Willow Wood Fence",
+    texture = "fmain_weeping_willow_fence.png",
+    inventory_image = "fmain_fence_overlay.png^fmain_weeping_willow_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    wield_image = "fmain_fence_overlay.png^fmain_weeping_willow_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    material = "fmain:weeping_willow_planks",
+    groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+    sounds = fmain.node_sound_wood_defaults()
+})
 
 --White Oak
 
@@ -373,7 +448,7 @@ minetest.register_node("fmain:white_oak_wood", {
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
---	sounds = default.node_sound_wood_defaults(),
+	sounds = fmain.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
 })
@@ -385,7 +460,7 @@ minetest.register_node("fmain:white_oak_planks", {
     tiles = {"fmain_white_oak_planks.png"},
     is_ground_content = false,
     groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
---    sounds = default.node_sound_wood_defaults(),
+    sounds = fmain.node_sound_wood_defaults(),
 })
 
 minetest.register_node("fmain:white_oak_leaves", {
@@ -411,7 +486,19 @@ minetest.register_node("fmain:white_oak_leaves", {
             }
         }
     },
---    sounds = default.node_sound_leaves_defaults(),
+--    sounds = fmain.node_sound_leaves_defaults(),
 
     after_place_node = after_place_leaves,
+})
+
+fmain.register_fence("fmain:white_oak_wood_fence", {
+    description = "White Oak Wood Fence",
+    texture = "fmain_white_oak_fence.png",
+    inventory_image = "fmain_fence_overlay.png^fmain_white_oak_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    wield_image = "fmain_fence_overlay.png^fmain_white_oak_planks.png^" ..
+                "fmain_fence_overlay.png^[makealpha:255,126,126",
+    material = "fmain:white_oak_planks",
+    groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+    sounds = fmain.node_sound_wood_defaults()
 })

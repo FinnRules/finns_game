@@ -1,18 +1,18 @@
 --
 -- Sounds
 --
---[[ Sounds!!! These will be included once new sounds are recorded
+-- Sounds!!! These will be included once new sounds are recorded
 function fmain.node_sound_defaults(table)
 	table = table or {}
-	table.footstep = table.footstep or
+--[[table.footstep = table.footstep or
 			{name = "", gain = 1.0}
 	table.dug = table.dug or
 			{name = "fmain_dug_node", gain = 0.25}
 	table.place = table.place or
-			{name = "fmain_place_node_hard", gain = 1.0}
+			{name = "fmain_place_node_hard", gain = 1.0}]]
 	return table
 end
-
+--[[
 function fmain.node_sound_stone_defaults(table)
 	table = table or {}
 	table.footstep = table.footstep or
@@ -60,17 +60,19 @@ function fmain.node_sound_gravel_defaults(table)
 	fmain.node_sound_defaults(table)
 	return table
 end
-
+]]
 function fmain.node_sound_wood_defaults(table)
 	table = table or {}
 	table.footstep = table.footstep or
-			{name = "fmain_wood_footstep", gain = 0.3}
-	table.dug = table.dug or
-			{name = "fmain_wood_footstep", gain = 1.0}
+			{name = "fmain_wood_footstep", gain = 1.5}
+--[[	table.dug = table.dug or
+			{name = "fmain_wood_footstep", gain = 1.0}]]
+	table.place = table.place or
+			{name = "fmain_wood_place", gain = 0.5}
 	fmain.node_sound_defaults(table)
 	return table
 end
-
+--[[
 function fmain.node_sound_leaves_defaults(table)
 	table = table or {}
 	table.footstep = table.footstep or

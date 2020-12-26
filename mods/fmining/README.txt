@@ -1,6 +1,6 @@
 fmining in Finn's Game
 
-Code by Emetchi GPLv3 with portions from Minetest_Game's default
+Code by Emetchi LGPLv3 with portions from Minetest_Game's default
 
 Textures by:
 

@@ -1,28 +1,60 @@
 fmain in Finn's Game
 
-Code by Emetchi GPLv3, code by milcerine GPLv3, portions used from Minetest Game
+Code by Emetchi LGPLv3, code by milcerine LGPLv3, portions used from Minetest Game
 
 Textures:
 Emetchi CC-BY-SA 3.0
-(all not mentioned)
+fmain_maple_planks.png
+fmain_obsidian.png
+fmain_redwood_bark.png
+fmain_redwood_core.png
+fmain_redwood_fence.png
+fmain_stick.png
+fmain_white_oak_bark.png
+fmain_white_oak_core.png
+fmain_white_oak_leaves.png
+fmain_maple_sapling.png
 
-milcerine CC-BY-SA 3.0
-fmain_black_sand.png
-fmain_moss.png
-fmain_moss_side.png
-fmain_redwood_planks.png
-fmain_cherry_core.png
-fmain_cherry_bark.png
-fmain_cherry_blossoms.png
-fmain_weepingwillow_bark.png
-fmain_weepingwillow_core.png
-fmain_weepingwillow_leaves.png
+Emetchi from RobinFox CC-BY-SA 3.0
+fmain_stone.png
 
 Emetchi from milcerine CC-BY-SA 3.0
 fmain_black_sandstone.png
 fmain_dirt_cherry.png
 fmain_dirt_cherry_white.png
 fmain_cherry_white_blossoms.png
+fmain_redwood_fence.png
+
+Emetchi from SonorousChortle CC-BY-SA 3.0
+fmain_leaf_litter.png
+fmain_leaf_litter_side.png
+fmain_maple_bark.png
+fmain_maple_core.png
+
+milcerine CC-BY-SA 3.0
+fmain_black_sand.png
+fmain_moss.png
+fmain_moss_side.png
+fmain_cherry_core.png
+fmain_cherry_bark.png
+fmain_cherry_blossoms.png
+fmain_weeping_willow_bark.png
+fmain_weeping_willow_core.png
+fmain_weeping_willow_leaves.png
+fmain_weeping_willow_planks.png
+fmain_weeping_willow_fence.png
+fmain_cherry_fence.png
+fmain_white_oak_fence.png
+fmain_weeping_willow_sapling.png
+
+milcerine from Emetchi CC-BY-SA 3.0
+fmain_maple_fence.png
+fmain_white_oak_planks.png
+fmain_redwood_planks.png
+fmain_white_oak_sapling.png
+
+milcerine from RobinFox CC-BY-SA 3.0
+fmain_poplar_fence.png
 
 Troy CC-BY-SA 3.0
 fmain_chest_front.png
@@ -43,7 +75,6 @@ fmain_grass.png
 fmain_grass_side.png
 fmain_gravel.png
 fmain_sandstone.png
-fmain_stone.png
 fmain_torch_animated.png
 fmain_torch_on_ceiling_animated.png
 fmain_torch_on_floor_animated.png
@@ -64,12 +95,6 @@ fmain_fence_rail_overlay.png
 SonorousChortle CC-BY-SA 3.0
 fmain_dirt.png
 
-Emetchi from SonorousChortle CC-BY-SA 3.0
-fmain_leaf_litter.png
-fmain_leaf_litter_side.png
-fmain_maple_bark.png
-fmain_maple_core.png
-
 RobinFox CC-BY-SA 3.0
 fmain_sand.png
 fmain_stone.png
@@ -80,3 +105,21 @@ fmain_poplar_leaves.png
 
 C0nfluxx from milcerine CC-BY-SA:
 fmain_white_sand.png
+
+++++++++++++
+Schematics:
+++++++++++++
+
+Emetchi CC-BY-SA 3.0
+cherry_tree_white.mts
+maple_tree.mts
+redwood_tree.mts
+white_oak_tree.mts
+
+milcerine CC-BY-SA 3.0
+cherry_tree.mts
+redwood_tree_alt1.mts
+redwood_tree_alt2.mts
+weeping_willow_tree.mts
+
+
