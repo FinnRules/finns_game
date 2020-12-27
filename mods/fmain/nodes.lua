@@ -167,7 +167,7 @@ minetest.register_node("fmain:white_sand", {
 })
 
 minetest.register_node("fmain:black_sand", {
-	description = "Sand",
+	description = "Black Sand",
 	tiles = {"fmain_black_sand.png"},
 	groups = {crumbly = 3, falling_node = 1, sand = 1},
 --	sounds = default.node_sound_sand_defaults(),

@@ -110,9 +110,9 @@ minetest.register_lbm({
 		local music_name = meta:get_string("music_name")
 		local handle = minetest.sound_play(music_name, {
 			pos = pos,
-			gain = 0.5,
+			gain = 0.2,
 			max_hear_distance = 25,
-			loop = true
+			loop = false
 		})
 
 		handlers[pos_string] = handle

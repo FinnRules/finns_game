@@ -14,3 +14,9 @@ jukebox.register_disc("fmusic:billiard_room",{
 	inventory_image = "fmusic_billiard_room.png",
 	music_name = "billiard_room",
 })
+
+jukebox.register_disc("fmusic:drive",{
+	description = "Drive",
+	inventory_image = "fmusic_drive.png",
+	music_name = "drive",
+})
