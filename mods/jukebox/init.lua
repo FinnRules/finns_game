@@ -75,7 +75,7 @@ minetest.register_node("jukebox:box", {
 				pos = pos,
 				gain = 0.5,
 				max_hear_distance = 25,
-				loop = true
+				loop = false
 			})
 
 			handlers[pos_string] = handle

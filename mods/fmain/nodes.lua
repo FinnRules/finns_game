@@ -2,7 +2,7 @@
 
 minetest.register_node("fmain:stone", {
 	description = "Stone",
-	tiles = {"fmain_stone.png"},
+	tiles = {"fmain_stone2.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = "fmain:cobble",
 })

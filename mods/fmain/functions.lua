@@ -718,7 +718,7 @@ end
 -- NOTICE: This method is not an official part of the API yet.
 -- This method may change in future.
 --
---[[Likely unneeded
+
 function fmain.can_interact_with_node(player, pos)
 	if player and player:is_player() then
 		if minetest.check_player_privs(player, "protection_bypass") then
@@ -755,4 +755,4 @@ function fmain.can_interact_with_node(player, pos)
 
 	return false
 end
-]]
+

@@ -30,6 +30,11 @@ minetest.register_node("fmining:silver_ore", {
 --	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_craftitem("fmining:silver_ingot",{
+	description = "Silver Ingot",
+	inventory_image = "fmining_silver_ingot.png",	
+})
+
 minetest.register_node("fmining:gold_ore", {
 	description = "Gold Ore",
 	tiles = {"fmain_stone.png^fmining_gold_ore.png"},
@@ -73,6 +78,11 @@ minetest.register_node("fmining:tungsten_ore", {
 	groups = {cracky = 3, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_craftitem("fmining:tungsten_ingot",{
+	description = "Tungsten Ingot",
+	inventory_image = "fmining_tungsten_ingot.png",	
 })
 
 minetest.register_node("fmining:opal_ore", {
