@@ -55,5 +55,11 @@ dofile(fmain.path .. "/craftitems.lua")
 dofile(fmain.path .. "/torch.lua")
 dofile(fmain.path .. "/crafting.lua")
 dofile(fmain.path .. "/saplings.lua")
+dofile(fmain.path .. "/smelter.lua")
 --Mapgen
 dofile(fmain.path .. "/biomes.lua")
+
+
+--test
+dofile(fmain.path .. "/wood_stove.lua")
+dofile(fmain.path .. "/coal_furnace.lua")
