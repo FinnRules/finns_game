@@ -77,6 +77,20 @@ fmain.register_stove_fuel({
 	burntime = 30,
 })
 
+fmain.register_stove_fuel({
+	recipe = "fmain:redwood_planks",
+	burntime = 30,
+})
+
+fmain.register_stove_fuel({
+	recipe = "fmain:weeping_willow_planks",
+	burntime = 30,
+})
+
+fmain.register_stove_fuel({
+	recipe = "fmain:cherry_planks",
+	burntime = 30,
+})
 
 function fmain.get_wood_stove_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
@@ -428,13 +442,13 @@ minetest.register_node("fmain:wood_stove_active", {
 	allow_metadata_inventory_move = allow_metadata_inventory_move,
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
---[[
+
 minetest.register_craft({
-	output = "fmain:furnace",
+	output = "fmain:wood_stove",
 	recipe = {
-		{"group:stone", "group:stone", "group:stone"},
-		{"group:stone", "", "group:stone"},
-		{"group:stone", "group:stone", "group:stone"},
+		{"group:cobble", "group:cobble", "group:cobble"},
+		{"group:cobble", "", "group:cobble"},
+		{"group:cobble", "group:cobble", "group:cobble"},
 	}
 })
-]]
+

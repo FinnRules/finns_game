@@ -45,13 +45,14 @@ end
 fmain.register_smelt_craft({
 	recipe = "fmain:stone",
 	cooktime = 10,
-	output = "fmining:gold_ore fmain:dirt",
+	output = "fmining:gold_ore",
 })
 
 
-function fmain.get_furnace_active_formspec(fuel_percent, item_percent)
-	return "size[8,8.5]"..
+function fmain.get_still_active_formspec(fuel_percent, item_percent)
+	--[[return "size[8,8.5]"..
 		"list[context;src;2.75,0.5;1,1;]"..
+		"list[context;btl;2.75,0.5;2,1;]".. --
 		"list[context;fuel;2.75,2.5;1,1;]"..
 		"image[2.75,1.5;1,1;fmain_furnace_fire_bg.png^[lowpart:"..
 		(fuel_percent)..":fmain_furnace_fire_fg.png]"..
@@ -66,12 +67,14 @@ function fmain.get_furnace_active_formspec(fuel_percent, item_percent)
 		"listring[current_player;main]"..
 		"listring[context;fuel]"..
 		"listring[current_player;main]"..
-		fmain.get_hotbar_bg(0, 4.25)
+		fmain.get_hotbar_bg(0, 4.25)]]
+	return 
 end
 
-function fmain.get_furnace_inactive_formspec()
+function fmain.get_still_inactive_formspec()
 	return "size[8,8.5]"..
 		"list[context;src;2.75,0.5;1,1;]"..
+		"list[context;btl;2.75,0.5;2,1;]"..
 		"list[context;fuel;2.75,2.5;1,1;]"..
 		"image[2.75,1.5;1,1;fmain_furnace_fire_bg.png]"..
 		"image[3.75,1.5;1,1;gui_furnace_arrow_bg.png^[transformR270]"..
@@ -87,9 +90,6 @@ function fmain.get_furnace_inactive_formspec()
 		fmain.get_hotbar_bg(0, 4.25)
 end
 
-local cooked1 = ItemStack("fmain:cobble")
-cooked1 = cooked1.output:add_item("fmain:dirt")
-cooked1 = cooked1.output:add_item("fmining:gold_ore")
 --
 -- Node callback functions that are the same for active and inactive furnace
 --
@@ -191,7 +191,7 @@ local function furnace_node_timer(pos, elapsed)
 				src_time = src_time + el
 				if src_time >= cooked.cooktime then
 					-- Place result in dst list if possible
-					if inv:room_for_item("dst", cooked1.output) then
+					if inv:room_for_item("dst", cooked.output) then
 						inv:add_item("dst", cooked.output)
 --						inv:set_stack("src", 1, inv:remove_item("src", inv:get_stack("src", 1):get_name())) --aftercooked.items[1] --replace empty string with other options
 						inv:remove_item("src", inv:get_stack("src", 1):get_name())
@@ -279,16 +279,16 @@ local function furnace_node_timer(pos, elapsed)
 		active = true
 		local fuel_percent = 100 - math.floor(fuel_time / fuel_totaltime * 100)
 		fuel_state = "@1%", fuel_percent
-		formspec = fmain.get_furnace_active_formspec(fuel_percent, item_percent)
-		swap_node(pos, "fmain:smelter_active")
+		formspec = fmain.get_still_active_formspec(fuel_percent, item_percent)
+		swap_node(pos, "fmain:still_active")
 		-- make sure timer restarts automatically
 		result = true
 	else
 		if fuellist and not fuellist[1]:is_empty() then
 			fuel_state = "@1%", 0
 		end
-		formspec = fmain.get_furnace_inactive_formspec()
-		swap_node(pos, "fmain:smelter")
+		formspec = fmain.get_still_inactive_formspec()
+		swap_node(pos, "fmain:still")
 		-- stop timer on the inactive furnace
 		minetest.get_node_timer(pos):stop()
 	end
@@ -318,8 +318,8 @@ end
 -- Node definitions
 --
 
-minetest.register_node("fmain:smelter", {
-	description = "Smelter",
+minetest.register_node("fmain:still", {
+	description = "Still",
 	tiles = {
 		"fmain_furnace_top.png", "fmain_furnace_bottom.png",
 		"fmain_furnace_side.png", "fmain_furnace_side.png",
@@ -356,7 +356,7 @@ minetest.register_node("fmain:smelter", {
 		fmain.get_inventory_drops(pos, "src", drops)
 		fmain.get_inventory_drops(pos, "fuel", drops)
 		fmain.get_inventory_drops(pos, "dst", drops)
-		drops[#drops+1] = "fmain:furnace"
+		drops[#drops+1] = "fmain:still"
 		minetest.remove_node(pos)
 		return drops
 	end,
@@ -366,8 +366,8 @@ minetest.register_node("fmain:smelter", {
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
 
-minetest.register_node("fmain:smelter_active", {
-	description = "Smelter",
+minetest.register_node("fmain:still_active", {
+	description = "Still",
 	tiles = {
 		"fmain_furnace_top.png", 
 		"fmain_furnace_bottom.png",
@@ -387,7 +387,7 @@ minetest.register_node("fmain:smelter_active", {
 	},
 	paramtype2 = "facedir",
 	light_source = 8,
-	drop = "fmain:furnace",
+	drop = "fmain:still",
 	groups = {cracky=2, not_in_creative_inventory=1, unsilktouchable = 1},
 	legacy_facedir_simple = true,
 	is_ground_content = false,

@@ -147,3 +147,11 @@ minetest.register_craftitem("fmining:tin_ingot", {
 	description = "Tin Ingot",
 	inventory_image = "fmining_tin_ingot.png",
 })
+
+minetest.register_node("fmining:diamond_ore", {
+	description = "Diamond Ore",
+	tiles = {"fmain_stone.png^fmining_diamond_ore.png"},
+	groups = {cracky = 3, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})

@@ -349,9 +349,9 @@ end
 minetest.register_node("fmain:coal_furnace", {
 	description = "Coal Furnace",
 	tiles = {
-		"fmain_furnace_top.png", "fmain_furnace_bottom.png",
-		"fmain_furnace_side.png", "fmain_furnace_side.png",
-		"fmain_furnace_side.png", "fmain_furnace_front.png"
+		"fmain_coal_furnace_top.png", "fmain_coal_furnace_bottom.png",
+		"fmain_coal_furnace_side.png", "fmain_coal_furnace_side.png",
+		"fmain_coal_furnace_side.png", "fmain_coal_furnace_front.png"
 	},
 	paramtype2 = "facedir",
 	groups = {cracky=2, unsilktouchable = 1},
@@ -397,13 +397,13 @@ minetest.register_node("fmain:coal_furnace", {
 minetest.register_node("fmain:coal_furnace_active", {
 	description = "Coal Furnace",
 	tiles = {
-		"fmain_furnace_top.png", 
-		"fmain_furnace_bottom.png",
-		"fmain_furnace_side.png", 
-		"fmain_furnace_side.png",
-		"fmain_furnace_side.png",
+		"fmain_coal_furnace_top.png", 
+		"fmain_coal_furnace_bottom.png",
+		"fmain_coal_furnace_side.png", 
+		"fmain_coal_furnace_side.png",
+		"fmain_coal_furnace_side.png",
 		{
-			image = "fmain_furnace_front_active.png",
+			image = "fmain_coal_furnace_front_active.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",

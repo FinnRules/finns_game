@@ -15,9 +15,11 @@ end
 -- Formspecs
 --
 
-smeltable = {}
+geothermal_furnace = {}
 
-function fmain.register_smelt_craft(def)
+geothermal_fuel = {}
+
+function fmain.register_geothermal_craft(def)
 	if not def.recipe then
 		def.recipe = nil
 	end
@@ -29,32 +31,67 @@ function fmain.register_smelt_craft(def)
 	end
 	--Add support for multiple outputs, just have output2, 3 etc then check to see if they exist
 	
-	table.insert(smeltable, def)
+	table.insert(geothermal_furnace, def)
 end
 
-function fmain.get_smeltable(item)
-	for i in pairs(smeltable) do
-		if smeltable[i].recipe == item then
-			return smeltable[i]
+function fmain.register_geothermal_fuel(def)
+	if not def.recipe then
+		def.recipe = nil
+	end
+	if not def.burntime then
+		def.burntime = 0
+	end
+	if not def.bucket then
+		def.bucket = nil
+	end
+
+	table.insert(geothermal_fuel, def)
+end
+	
+
+function fmain.get_geothermal_furnacable(item)
+	for i in pairs(geothermal_furnace) do
+		if geothermal_furnace[i].recipe == item then
+			return geothermal_furnace[i]
 		end
 	end
 	local foo = {recipe = "", cooktime = 0, output = ""}
 	return foo --
 end
 
-fmain.register_smelt_craft({
-	recipe = "fmain:stone",
-	cooktime = 10,
-	output = "fmining:gold_ore fmain:dirt",
+function fmain.get_geothermal_fuel(item)
+	for i in pairs(geothermal_fuel) do
+		if geothermal_fuel[i].recipe == item then
+			return geothermal_fuel[i]
+		end
+	end
+	local foo = {recipe = "", burntime = 0}
+	return foo
+end
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:iron_ore",
+	cooktime = 150,
+	output = "fmining:iron_ingot",
 })
 
+fmain.register_geothermal_fuel({
+	recipe = "fmining:coal",
+	burntime = 30,
+})
 
-function fmain.get_furnace_active_formspec(fuel_percent, item_percent)
+fmain.register_geothermal_fuel({
+	recipe = "fbucket:bucket_lava",
+	burntime = 100,
+	bucket = "fbucket:bucket_empty",
+})
+
+function fmain.get_geothermal_furnace_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
 		"list[context;src;2.75,0.5;1,1;]"..
 		"list[context;fuel;2.75,2.5;1,1;]"..
-		"image[2.75,1.5;1,1;fmain_furnace_fire_bg.png^[lowpart:"..
-		(fuel_percent)..":fmain_furnace_fire_fg.png]"..
+		"image[2.75,1.5;1,1;fmain_coal_furnace_fire_bg.png^[lowpart:"..
+		(fuel_percent)..":fmain_coal_furnace_fire_fg.png]"..
 		"image[3.75,1.5;1,1;gui_furnace_arrow_bg.png^[lowpart:"..
 		(item_percent)..":gui_furnace_arrow_fg.png^[transformR270]"..
 		"list[context;dst;4.75,0.96;2,2;]"..
@@ -69,11 +106,11 @@ function fmain.get_furnace_active_formspec(fuel_percent, item_percent)
 		fmain.get_hotbar_bg(0, 4.25)
 end
 
-function fmain.get_furnace_inactive_formspec()
+function fmain.get_geothermal_furnace_inactive_formspec()
 	return "size[8,8.5]"..
 		"list[context;src;2.75,0.5;1,1;]"..
 		"list[context;fuel;2.75,2.5;1,1;]"..
-		"image[2.75,1.5;1,1;fmain_furnace_fire_bg.png]"..
+		"image[2.75,1.5;1,1;fmain_coal_furnace_fire_bg.png]"..
 		"image[3.75,1.5;1,1;gui_furnace_arrow_bg.png^[transformR270]"..
 		"list[context;dst;4.75,0.96;2,2;]"..
 		"list[current_player;main;0,4.25;8,1;]"..
@@ -87,9 +124,6 @@ function fmain.get_furnace_inactive_formspec()
 		fmain.get_hotbar_bg(0, 4.25)
 end
 
-local cooked1 = ItemStack("fmain:cobble")
-cooked1 = cooked1.output:add_item("fmain:dirt")
-cooked1 = cooked1.output:add_item("fmining:gold_ore")
 --
 -- Node callback functions that are the same for active and inactive furnace
 --
@@ -107,9 +141,9 @@ local function allow_metadata_inventory_put(pos, listname, index, stack, player)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	if listname == "fuel" then
-		if minetest.get_craft_result({method="fuel", width=1, items={stack}}).time ~= 0 then --Leave me
+		if fmain.get_geothermal_fuel(stack:get_name()).burntime ~= 0 then --probably broken
 			if inv:is_empty("src") then
-				meta:set_string("infotext", "Furnace is empty")
+				meta:set_string("infotext", "Coal Furnace is empty")
 			end
 			return stack:get_count()
 		else
@@ -168,14 +202,15 @@ local function furnace_node_timer(pos, elapsed)
 		srclist = inv:get_list("src") --A table
 		fuellist = inv:get_list("fuel")
 		local itemInside = inv:get_stack("src", 1):get_name()
+		local fuelInside = inv:get_stack("fuel", 1):get_name()
 		--
 		-- Cooking
 		--
 
 		-- Check if we have cookable content
 		local aftercooked
-		cooked = fmain.get_smeltable(itemInside) --Change me to a custom function
-		aftercooked = fmain.get_smeltable(itemInside)
+		cooked = fmain.get_geothermal_furnacable(itemInside) --Change me to a custom function
+		aftercooked = fmain.get_geothermal_furnacable(itemInside)
 		cookable = cooked.cooktime ~= 0 --Checks to see if object is cookable
 		local el = math.min(elapsed, fuel_totaltime - fuel_time)
 		if cookable then -- fuel lasts long enough, adjust el to cooking duration
@@ -191,9 +226,8 @@ local function furnace_node_timer(pos, elapsed)
 				src_time = src_time + el
 				if src_time >= cooked.cooktime then
 					-- Place result in dst list if possible
-					if inv:room_for_item("dst", cooked1.output) then
+					if inv:room_for_item("dst", cooked.output) then
 						inv:add_item("dst", cooked.output)
---						inv:set_stack("src", 1, inv:remove_item("src", inv:get_stack("src", 1):get_name())) --aftercooked.items[1] --replace empty string with other options
 						inv:remove_item("src", inv:get_stack("src", 1):get_name())
 						src_time = src_time - cooked.cooktime
 						update = true
@@ -210,16 +244,20 @@ local function furnace_node_timer(pos, elapsed)
 			if cookable then
 				-- We need to get new fuel
 				local afterfuel
-				fuel, afterfuel = minetest.get_craft_result({method = "fuel", width = 1, items = fuellist})
-
-				if fuel.time == 0 then
+				fuel = fmain.get_geothermal_fuel(fuelInside)
+				afterfuel = fmain.get_geothermal_fuel(fuelInside)
+				if fuel.burntime == 0 then
 					-- No valid fuel in fuel list
 					fuel_totaltime = 0
 					src_time = 0
 				else
 					-- Take fuel from fuel list
-					inv:set_stack("fuel", 1, afterfuel.items[1])
+					inv:remove_item("fuel", inv:get_stack("fuel", 1):get_name())
+					if inv:room_for_item("fuel", afterfuel.bucket) then
+						inv:add_item("fuel", afterfuel.bucket)
+					end
 					-- Put replacements in dst list or drop them on the furnace.
+--[[
 					local replacements = fuel.replacements
 					if replacements[1] then
 						local leftover = inv:add_item("dst", replacements[1])
@@ -229,8 +267,9 @@ local function furnace_node_timer(pos, elapsed)
 							minetest.item_drop(replacements[1], nil, drop_pos)
 						end
 					end
+]] --Leave me until replacements are supported
 					update = true
-					fuel_totaltime = fuel.time + (fuel_totaltime - fuel_time)
+					fuel_totaltime = fuel.burntime + (fuel_totaltime - fuel_time)
 				end
 			else
 				-- We don't need to get new fuel since there is no cookable item
@@ -243,8 +282,8 @@ local function furnace_node_timer(pos, elapsed)
 		elapsed = elapsed - el
 	end
 
-	if fuel and fuel_totaltime > fuel.time then
-		fuel_totaltime = fuel.time
+	if fuel and fuel_totaltime > fuel.burntime then
+		fuel_totaltime = fuel.burntime
 	end
 	if srclist and srclist[1]:is_empty() then
 		src_time = 0
@@ -279,16 +318,16 @@ local function furnace_node_timer(pos, elapsed)
 		active = true
 		local fuel_percent = 100 - math.floor(fuel_time / fuel_totaltime * 100)
 		fuel_state = "@1%", fuel_percent
-		formspec = fmain.get_furnace_active_formspec(fuel_percent, item_percent)
-		swap_node(pos, "fmain:smelter_active")
+		formspec = fmain.get_geothermal_furnace_active_formspec(fuel_percent, item_percent)
+		swap_node(pos, "fmain:geothermal_furnace_active")
 		-- make sure timer restarts automatically
 		result = true
 	else
 		if fuellist and not fuellist[1]:is_empty() then
 			fuel_state = "@1%", 0
 		end
-		formspec = fmain.get_furnace_inactive_formspec()
-		swap_node(pos, "fmain:smelter")
+		formspec = fmain.get_geothermal_furnace_inactive_formspec()
+		swap_node(pos, "fmain:geothermal_furnace")
 		-- stop timer on the inactive furnace
 		minetest.get_node_timer(pos):stop()
 	end
@@ -296,9 +335,9 @@ local function furnace_node_timer(pos, elapsed)
 
 	local infotext
 	if active then
-		infotext = "Smelter active"
+		infotext = "Geothermal Furnace active"
 	else
-		infotext = "Smelter inactive"
+		infotext = "Geothermal Furnace inactive"
 	end
 	infotext = infotext .. "\n" .. "(Item: @1; Fuel: @2)", item_state, fuel_state
 
@@ -318,12 +357,12 @@ end
 -- Node definitions
 --
 
-minetest.register_node("fmain:smelter", {
-	description = "Smelter",
+minetest.register_node("fmain:geothermal_furnace", {
+	description = "Geothermal Furnace",
 	tiles = {
-		"fmain_furnace_top.png", "fmain_furnace_bottom.png",
-		"fmain_furnace_side.png", "fmain_furnace_side.png",
-		"fmain_furnace_side.png", "fmain_furnace_front.png"
+		"fmain_geothermal_furnace_top.png", "fmain_geothermal_furnace_bottom.png",
+		"fmain_geothermal_furnace_side.png", "fmain_geothermal_furnace_side.png",
+		"fmain_geothermal_furnace_side.png", "fmain_geothermal_furnace_front.png"
 	},
 	paramtype2 = "facedir",
 	groups = {cracky=2, unsilktouchable = 1},
@@ -356,7 +395,7 @@ minetest.register_node("fmain:smelter", {
 		fmain.get_inventory_drops(pos, "src", drops)
 		fmain.get_inventory_drops(pos, "fuel", drops)
 		fmain.get_inventory_drops(pos, "dst", drops)
-		drops[#drops+1] = "fmain:furnace"
+		drops[#drops+1] = "fmain:geothermal_furnace"
 		minetest.remove_node(pos)
 		return drops
 	end,
@@ -366,16 +405,16 @@ minetest.register_node("fmain:smelter", {
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
 
-minetest.register_node("fmain:smelter_active", {
-	description = "Smelter",
+minetest.register_node("fmain:geothermal_furnace_active", {
+	description = "Geothermal Furnace",
 	tiles = {
-		"fmain_furnace_top.png", 
-		"fmain_furnace_bottom.png",
-		"fmain_furnace_side.png", 
-		"fmain_furnace_side.png",
-		"fmain_furnace_side.png",
+		"fmain_geothermal_furnace_top.png", 
+		"fmain_geothermal_furnace_bottom.png",
+		"fmain_geothermal_furnace_side.png", 
+		"fmain_geothermal_furnace_side.png",
+		"fmain_geothermal_furnace_side.png",
 		{
-			image = "fmain_furnace_front_active.png",
+			image = "fmain_geothermal_furnace_front_active.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
@@ -387,7 +426,7 @@ minetest.register_node("fmain:smelter_active", {
 	},
 	paramtype2 = "facedir",
 	light_source = 8,
-	drop = "fmain:furnace",
+	drop = "fmain:geothermal_furnace",
 	groups = {cracky=2, not_in_creative_inventory=1, unsilktouchable = 1},
 	legacy_facedir_simple = true,
 	is_ground_content = false,

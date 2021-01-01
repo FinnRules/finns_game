@@ -1,0 +1,12 @@
+This game uses an increasing number of custom groups, functions and APIs across its many mods.
+
+Groups:
+
+- For the purpose of crafting
+	- cobble
+	- iron: Iron Ingots and Pig Iron
+
+- Other
+	- unsilktouchable: Ignores the silktouch functionality of the Ruby Pickaxe
+	- ore: Allows the fortune capabilities of the Sapphire Pickaxe to be used on the node
+

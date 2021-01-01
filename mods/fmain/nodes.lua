@@ -25,7 +25,7 @@ minetest.register_node("fmain:cobble", {
 	description = "Cobblestone",
 	tiles = {"fmain_cobble.png"},
 	is_ground_content = false,
-	groups = {cracky = 3, stone = 2},
+	groups = {cracky = 3, stone = 2, cobble = 1},
 })
 --[[
 minetest.register_node("fmain:bluestone_cobble", {
