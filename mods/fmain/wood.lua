@@ -145,7 +145,7 @@ minetest.register_node("fmain:redwood_planks", {
 	place_param2 = 0,
 	tiles = {"fmain_redwood_planks.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 	sounds = fmain.node_sound_wood_defaults(),
 })
 

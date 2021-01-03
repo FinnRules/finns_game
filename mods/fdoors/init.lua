@@ -542,7 +542,7 @@ function fdoors.trapdoor_toggle(pos, node, clicker)
 
 	replace_old_owner_information(pos)
 
-	if clicker and not default.can_interact_with_node(clicker, pos) then
+	if clicker and not fmain.can_interact_with_node(clicker, pos) then
 		return false
 	end
 
@@ -626,7 +626,7 @@ function fdoors.register_trapdoor(name, def)
 	end
 
 	if not def.sounds then
-		def.sounds = default.node_sound_wood_defaults()
+		def.sounds = fmain.node_sound_wood_defaults()
 	end
 
 	if not def.sound_open then

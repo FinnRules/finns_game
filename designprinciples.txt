@@ -12,4 +12,4 @@ Reasonably Grounded: The game should contain (unmodded) elements that do not dep
 
 Reward Exploration: The game should reward exploration of new terrains and attempt to present new reasons to explore (through generated structures and hard to find crops)
 
-Playable Upgrade Path: The game should be playable upon spawning, and never devolve into grinding. Rare items should not be unfindable if ever necessary
+Playable Upgrade Path: The game should be playable upon spawning, and never devolve into grinding. Rare items should not be unfindable if ever necessary. The upgrade path will involve greater scarcity of materials.

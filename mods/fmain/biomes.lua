@@ -155,7 +155,7 @@ minetest.register_biome({
 
 minetest.register_biome({
         name = "redwood_forest",
-        node_top = "fmain:dirt_with_grass",
+        node_top = "fmain:redwood_litter",
         depth_top = 1,
         node_filler = "fmain:dirt",
         depth_filler = 1,
@@ -169,7 +169,7 @@ minetest.register_biome({
 
 minetest.register_decoration({
     deco_type = "schematic",
-    place_on = {"fmain:dirt_with_grass"},
+    place_on = {"fmain:redwood_litter"},
     sidelen = 16,
     fill_ratio = 0.02,
     biomes = {"redwood_forest"},
@@ -272,7 +272,7 @@ minetest.register_biome({
 minetest.register_decoration({
     deco_type = "schematic",
     place_on = {"fmain:dirt_with_grass"},
-    sidelen = 16,
+    sidelen = 4,
     fill_ratio = 0.0035,
     biomes = {"mixed_forest"},
     y_max = 150,
@@ -285,7 +285,7 @@ minetest.register_decoration({
 minetest.register_decoration({
     deco_type = "schematic",
     place_on = {"fmain:dirt_with_grass"},
-    sidelen = 16,
+    sidelen = 4,
     fill_ratio = 0.0035,
     biomes = {"mixed_forest"},
     y_max = 150,
@@ -298,7 +298,7 @@ minetest.register_decoration({
 minetest.register_decoration({
     deco_type = "schematic",
     place_on = {"fmain:dirt_with_grass"},
-    sidelen = 16,
+    sidelen = 4,
     fill_ratio = 0.0015,
     biomes = {"mixed_forest"},
     y_max = 150,
@@ -311,7 +311,7 @@ minetest.register_decoration({
 minetest.register_decoration({
     deco_type = "schematic",
     place_on = {"fmain:dirt_with_grass"},
-    sidelen = 16,
+    sidelen = 4,
     fill_ratio = 0.0035,
     biomes = {"mixed_forest"},
     y_max = 150,

@@ -2,8 +2,8 @@
 
 minetest.register_node("fmain:stone", {
 	description = "Stone",
-	tiles = {"fmain_stone2.png"},
-	groups = {cracky = 3, stone = 1},
+	tiles = {"fmain_stone.png"},
+	groups = {cracky = 1, stone = 1},
 	drop = "fmain:cobble",
 })
 
@@ -17,7 +17,7 @@ minetest.register_node("fmain:mossy_stone", {
 		"fmain_stone.png^fmain_moss_side.png",
 		"fmain_stone.png^fmain_moss_side.png",
 		},
-	groups = {cracky = 3, stone = 1},
+	groups = {cracky = 1, stone = 1},
 	drop = "fmain:cobble",
 })
 
@@ -223,6 +223,18 @@ minetest.register_node("fmain:dirt_with_litter", {
 --	}),
 })
 
+minetest.register_node("fmain:redwood_litter", {
+	description = "Dirt with Redwood Litter",
+	tiles = {"fmain_grass.png^fmain_redwood_litter.png", "fmain_dirt.png",
+		{name = "fmain_dirt.png^fmain_redwood_litter_side.png",
+			tileable_vertical = false}},
+	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "fmain:dirt",
+--	sounds = default.node_sound_dirt_defaults({
+--		footstep = {name = "default_grass_footstep", gain = 0.25},
+--	}),
+})
+
 --Ladder
 
 minetest.register_node("fmain:ladder", {
@@ -282,4 +294,21 @@ minetest.register_node("fmain:obsidian", {
 	tiles = {"fmain_obsidian.png"},
 --	sounds = default.node_sound_stone_defaults(),
 	groups = {cracky = 3, level = 2},
+})
+
+minetest.register_node("fmain:limestone", {
+	description = "Limestone",
+	tiles = {"fmain_limestone.png"},
+	groups = {cracky = 1, ore = 1}, --For the Sapphire pic,
+	drop = "fmain:limestone_chunk 4",
+})
+
+minetest.register_craftitem("fmain:limestone_chunk", {
+	description = "Limestone Chunk",
+	inventory_image = "fmain_limestone_chunk.png",
+})
+
+minetest.register_craftitem("fmain:fluxed_coal_powder", {
+	description = "Fluxed Coal Powder",
+	inventory_image = "fmain_fluxed_coal_powder.png",
 })

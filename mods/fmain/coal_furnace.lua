@@ -428,13 +428,13 @@ minetest.register_node("fmain:coal_furnace_active", {
 	allow_metadata_inventory_move = allow_metadata_inventory_move,
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
---[[
+
 minetest.register_craft({
-	output = "fmain:furnace",
+	output = "fmain:coal_furnace",
 	recipe = {
-		{"group:stone", "group:stone", "group:stone"},
-		{"group:stone", "", "group:stone"},
-		{"group:stone", "group:stone", "group:stone"},
+		{"fmining:bronze_ingot", "fmining:bronze_ingot", "fmining:bronze_ingot"},
+		{"fmining:bronze_ingot", "", "fmining:bronze_ingot"},
+		{"fmining:bronze_ingot", "fmining:bronze_ingot", "fmining:bronze_ingot"},
 	}
 })
-]]
+

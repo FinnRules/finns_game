@@ -6,6 +6,14 @@ minetest.register_node("fmining:coal_ore", {
 --	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("fmining:rich_coal_ore", {
+	description = "Rich Coal Ore",
+	tiles = {"fmain_stone.png^fmining_rich_coal_ore.png"},
+	groups = {cracky = 3, ore = 1},
+	drop = "fmining:coal 2",
+--	sounds = default.node_sound_stone_defaults(),
+})
+
 minetest.register_craftitem("fmining:coal",{
 	description = "Coal",
 	inventory_image = "fmining_coal.png",
@@ -22,6 +30,13 @@ minetest.register_node("fmining:iron_ore", {
 minetest.register_craftitem("fmining:iron_ingot", {
 	description = "Iron Ingot",
 	inventory_image = "fmining_iron_ingot.png",
+	groups = {iron_ingot = 1}
+})
+
+minetest.register_craftitem("fmining:pig_iron_ingot", {
+	description = "Pig Iron Ingot",
+	inventory_image = "fmining_pig_iron_ingot.png",
+	groups = {iron_ingot = 1}
 })
 
 minetest.register_node("fmining:copper_ore", {
@@ -152,6 +167,22 @@ minetest.register_node("fmining:diamond_ore", {
 	description = "Diamond Ore",
 	tiles = {"fmain_stone.png^fmining_diamond_ore.png"},
 	groups = {cracky = 3, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("fmining:uranium_ore", {
+	description = "Uranium Ore",
+	tiles = {"fmain_stone.png^fmining_uranium_ore.png"},
+	groups = {cracky = 3, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("fmining:lead_ore", {
+	description = "Lead Ore",
+	tiles = {"fmain_stone.png^fmining_lead_ore.png"},
+	groups = {cracky = 2, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
