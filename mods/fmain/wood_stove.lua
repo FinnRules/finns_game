@@ -363,7 +363,7 @@ end
 minetest.register_node("fmain:wood_stove", {
 	description = "Wood Stove",
 	tiles = {
-		"fmain_furnace_top.png", "fmain_furnace_bottom.png",
+		"fmain_wood_stove_topbottom.png", "fmain_wood_stove_topbottom.png",
 		"fmain_wood_stove_side.png", "fmain_wood_stove_side.png",
 		"fmain_wood_stove_side.png", "fmain_wood_stove_front.png"
 	},
@@ -411,13 +411,13 @@ minetest.register_node("fmain:wood_stove", {
 minetest.register_node("fmain:wood_stove_active", {
 	description = "Wood Stove",
 	tiles = {
-		"fmain_furnace_top.png", 
-		"fmain_furnace_bottom.png",
+		"fmain_wood_stove_topbottom.png", 
+		"fmain_wood_stove_topbottom.png",
 		"fmain_wood_stove_side.png", 
 		"fmain_wood_stove_side.png",
 		"fmain_wood_stove_side.png",
 		{
-			image = "fmain_furnace_front_active.png",
+			image = "fmain_wood_stove_front_active.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
