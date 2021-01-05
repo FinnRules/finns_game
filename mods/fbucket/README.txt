@@ -13,3 +13,7 @@ Slight modifications by Emetchi (LGPLv2.1+)
 Authors of media (textures)
 ---------------------------
 ElementW (CC BY-SA 3.0)
+
+Emetchi from ElementW CC-BY-SA 3.0
+fbucket_pail.png
+fbucket_pail_water.png

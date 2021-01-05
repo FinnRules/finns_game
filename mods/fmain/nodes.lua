@@ -40,6 +40,11 @@ minetest.register_node("fmain:dirt", {
 	description = "Dirt",
 	tiles = {"fmain_dirt.png"},
 	groups = {crumbly = 3, soil = 1},
+	soil = {
+				base = "fmain:dirt",
+				dry = "ffarming:soil",
+				wet = "ffarming:soil_wet"
+			}
 })
 
 minetest.register_node("fmain:dirt_with_grass", {
@@ -57,6 +62,40 @@ minetest.register_node("fmain:dirt_with_grass", {
 			dry = "ffarming:soil",
 			wet = "ffarming:soil_wet"
 		}
+})
+
+minetest.register_node("fmain:dirt_with_litter", {
+	description = "Dirt with Leaf Litter",
+	tiles = {"fmain_grass.png^fmain_leaf_litter.png", "fmain_dirt.png",
+		{name = "fmain_dirt.png^fmain_leaf_litter_side.png",
+			tileable_vertical = false}},
+	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "fmain:dirt",
+--	sounds = default.node_sound_dirt_defaults({
+--		footstep = {name = "default_grass_footstep", gain = 0.25},
+--	}),
+	soil = {
+				base = "fmain:dirt_with_litter",
+				dry = "ffarming:soil",
+				wet = "ffarming:soil_wet"
+			}
+})
+
+minetest.register_node("fmain:redwood_litter", {
+	description = "Dirt with Redwood Litter",
+	tiles = {"fmain_grass.png^fmain_redwood_litter.png", "fmain_dirt.png",
+		{name = "fmain_dirt.png^fmain_redwood_litter_side.png",
+			tileable_vertical = false}},
+	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "fmain:dirt",
+--	sounds = default.node_sound_dirt_defaults({
+--		footstep = {name = "default_grass_footstep", gain = 0.25},
+--	}),
+	soil = {
+				base = "fmain:redwood_litter",
+				dry = "ffarming:soil",
+				wet = "ffarming:soil_wet"
+			}
 })
 
 --Liquids (oil will be found in fmining)
@@ -207,32 +246,6 @@ minetest.register_node("fmain:black_sandstone", {
 	tiles = {"fmain_black_sandstone.png"},
 	groups = {crumbly = 1, cracky = 3},
 --	sounds = default.node_sound_stone_defaults(),
-})
-
---Wood and tree items (incl leaves)
-
-minetest.register_node("fmain:dirt_with_litter", {
-	description = "Dirt with Leaf Litter",
-	tiles = {"fmain_grass.png^fmain_leaf_litter.png", "fmain_dirt.png",
-		{name = "fmain_dirt.png^fmain_leaf_litter_side.png",
-			tileable_vertical = false}},
-	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "fmain:dirt",
---	sounds = default.node_sound_dirt_defaults({
---		footstep = {name = "default_grass_footstep", gain = 0.25},
---	}),
-})
-
-minetest.register_node("fmain:redwood_litter", {
-	description = "Dirt with Redwood Litter",
-	tiles = {"fmain_grass.png^fmain_redwood_litter.png", "fmain_dirt.png",
-		{name = "fmain_dirt.png^fmain_redwood_litter_side.png",
-			tileable_vertical = false}},
-	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "fmain:dirt",
---	sounds = default.node_sound_dirt_defaults({
---		footstep = {name = "default_grass_footstep", gain = 0.25},
---	}),
 })
 
 --Ladder

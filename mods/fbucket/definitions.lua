@@ -13,5 +13,14 @@ fbucket.register_liquid(
 	"fbucket:bucket_lava",
 	"bucket_lava.png",
 	"Lava Bucket",
+	{tool = 1}
+)
+
+fbucket.register_pail_liquid(
+	"fmain:water_source",
+	"fmain:water_flowing",
+	"fbucket:pail_water",
+	"fbucket_pail_water.png",
+	"Water Pail",
 	{tool = 1, water_bucket = 1}
 )

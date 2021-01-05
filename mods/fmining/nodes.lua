@@ -186,3 +186,11 @@ minetest.register_node("fmining:lead_ore", {
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
+
+minetest.register_node("fmining:thorium_ore", {
+	description = "Thorium Ore",
+	tiles = {"fmain_stone.png^fmining_thorium_ore.png"},
+	groups = {cracky = 6, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})
