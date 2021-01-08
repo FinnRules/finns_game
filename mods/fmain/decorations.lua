@@ -191,7 +191,7 @@ minetest.register_node("fmain:snowdrop", {
 })
 
 minetest.register_node("fmain:dahlia", {
-	description = "Grass",
+	description = "Dahlia",
 	drawtype = "plantlike",
 	waving = 1,
 	tiles = {"fmain_flower_dahlia.png"},
@@ -274,3 +274,74 @@ minetest.register_node("fmain:hellebore", {
 	end,]]
 })
 
+minetest.register_node("fmain:purple_orchid", {
+	description = "Purple Orchid",
+	drawtype = "plantlike",
+	waving = 1,
+	tiles = {"fmain_flower_purple_orchid.png"},
+	-- Use texture of a taller grass stage in inventory
+	inventory_image = "fmain_flower_purple_orchid.png",
+--	wield_image = "fmain_flower_purple_orchid.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	buildable_to = true,
+	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
+--	sounds = default.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
+	},
+--[[
+	on_place = function(itemstack, placer, pointed_thing)
+		-- place a random grass node
+		local stack = ItemStack("default:grass_" .. math.random(1,5))
+		local ret = minetest.item_place(stack, placer, pointed_thing)
+		return ItemStack("default:grass_1 " ..
+			itemstack:get_count() - (1 - ret:get_count()))
+	end,]]
+})
+
+minetest.register_node("fmain:red_hot_poker", {
+	description = "Red Hot Poker",
+	drawtype = "plantlike",
+	waving = 1,
+	tiles = {"fmain_flower_red_hot_poker.png"},
+	-- Use texture of a taller grass stage in inventory
+	inventory_image = "fmain_flower_red_hot_poker.png",
+--	wield_image = "fmain_flower_red_hot_poker.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	buildable_to = true,
+	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
+--	sounds = default.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
+	},
+--[[
+	on_place = function(itemstack, placer, pointed_thing)
+		-- place a random grass node
+		local stack = ItemStack("default:grass_" .. math.random(1,5))
+		local ret = minetest.item_place(stack, placer, pointed_thing)
+		return ItemStack("default:grass_1 " ..
+			itemstack:get_count() - (1 - ret:get_count()))
+	end,]]
+})
+
+--Very dirty flower spawn code for test versions
+local flowerList = {"nemophila", "bleeding_heart", "bells_of_ireland", "snowdrop", "dahlia", "rose", "hellbore", "purple_orchid", "red_hot_poker"}
+
+for i in pairs(flowerList) do
+	minetest.register_decoration({
+	    deco_type = "simple",
+	    place_on = {"fmain:dirt_with_grass"},
+	    sidelen = 16,
+	    fill_ratio = 0.005,
+	    biomes = {"cherry_blossom_forest", "mixed_forest", "white_forest", "grassland"},
+	    y_max = 200,
+	    y_min = 1,
+	    decoration = "fmain:" .. flowerList[i],
+	})
+end

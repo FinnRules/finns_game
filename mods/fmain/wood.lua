@@ -15,6 +15,8 @@ Poplar
 Cherry
 Weeping Willow
 White Oak
+
+Wood from trees does not contain the wood group, that is for planks only!
 	
 ]]
 

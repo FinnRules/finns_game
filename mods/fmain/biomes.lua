@@ -93,7 +93,7 @@ minetest.register_biome({
 
 minetest.register_biome({
 		name = "grassland",
-		node_top = "fmain:dirth_with_grass",
+		node_top = "fmain:dirt_with_grass",
 		depth_top = 1,
 		node_filler = "fmain:dirt",
 		depth_filler = 5,
@@ -320,3 +320,114 @@ minetest.register_decoration({
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
+
+minetest.register_biome({
+        name = "riverbed",
+        node_top = "fmain:sand",
+        depth_top = 3,
+        node_filler = "fmain:dirt",
+        depth_filler = 3,
+        node_stone = "fmain:stone",
+        node_riverbed = "fmain:sand",
+        depth_riverbed = 2,
+        y_max = 0,
+        y_min = -15,
+--        heat_point = 50,
+--        humidity_point = 60,
+})
+
+
+minetest.register_ore({
+		ore_type        = "blob",
+		ore             = "fmain:clay",
+		wherein         = {"fmain:sand"},
+		clust_scarcity  = 16 * 16 * 16,
+		clust_size      = 5,
+		y_max           = 0,
+		y_min           = -15,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = -316,
+			octaves = 1,
+			persist = 0.0
+		},
+	})
+
+minetest.register_ore({
+		ore_type        = "blob",
+		ore             = "fmain:sand",
+		wherein         = {"fmain:stone"},
+		clust_scarcity  = 16 * 16 * 16,
+		clust_size      = 5,
+		y_max           = 0,
+		y_min           = -31,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = 2316,
+			octaves = 1,
+			persist = 0.0
+		},
+	})
+
+minetest.register_ore({
+		ore_type        = "blob",
+		ore             = "fmain:white_sand",
+		wherein         = {"fmain:stone"},
+		clust_scarcity  = 16 * 16 * 16,
+		clust_size      = 5,
+		y_max           = 0,
+		y_min           = -31,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = 2316,
+			octaves = 1,
+			persist = 0.0
+		},
+	})
+
+minetest.register_ore({
+		ore_type        = "blob",
+		ore             = "fmain:dirt",
+		wherein         = {"fmain:stone"},
+		clust_scarcity  = 16 * 16 * 16,
+		clust_size      = 5,
+		y_max           = 31000,
+		y_min           = -31,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = 17676,
+			octaves = 1,
+			persist = 0.0
+		},
+	})
+
+minetest.register_ore({
+		ore_type        = "blob",
+		ore             = "fmain:gravel",
+		wherein         = {"fmain:stone"},
+		clust_scarcity  = 16 * 14 * 16,
+		clust_size      = 5,
+		y_max           = 31000,
+		y_min           = -31000,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = 766,
+			octaves = 1,
+			persist = 0.0
+		},
+	})

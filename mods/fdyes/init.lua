@@ -20,6 +20,13 @@ function fdyes.register_color(def)
 			groups = {oddly_breakable_by_hand = 1},
 		})
 	end
+	if not def.noclay then
+		minetest.register_node("fdyes:" .. def.name .. "_baked_clay", {
+			description = def.clayname or def.displayname .. " Dyed Baked Clay",
+			tiles = {"fdyes_" .. def.name .. "_baked_clay.png"},
+			groups = {cracky = 1},
+		})
+	end
 
 	
 
@@ -34,6 +41,12 @@ end
 fdyes.register_color({
 	name = "purple",
 	displayname = "Purple",
+})
+
+minetest.register_craft({
+	recipe = {"fmain:purple_orchid"},
+	type = "shapeless",
+	output = "fdyes:purple_dye 2",
 })
 
 fdyes.register_color({
@@ -63,6 +76,23 @@ fdyes.register_color({
 	displayname = "Red",
 })
 
+minetest.register_craft({
+	recipe = {"fmain:rose"},
+	type = "shapeless",
+	output = "fdyes:red_dye 2",
+})
+
+fdyes.register_color({
+	name = "lime",
+	displayname = "Lime",
+})
+
+minetest.register_craft({
+	recipe = {"fmain:bells_of_ireland"},
+	type = "shapeless",
+	output = "fdyes:lime_dye 2",
+})
+
 fdyes.register_color({
 	name = "green",
 	displayname = "Green",
@@ -73,9 +103,21 @@ fdyes.register_color({
 	displayname = "Black",
 })
 
+minetest.register_craft({
+	recipe = {"fmain:hellebore"},
+	type = "shapeless",
+	output = "fdyes:black_dye 2",
+})
+
 fdyes.register_color({
 	name = "yellow",
 	displayname = "Yellow",
+})
+
+minetest.register_craft({
+	recipe = {"fmain:dahlia"},
+	type = "shapeless",
+	output = "fdyes:yellow_dye 2",
 })
 
 fdyes.register_color({
@@ -83,3 +125,63 @@ fdyes.register_color({
 	displayname = "White",
 	nowool = true,
 })
+
+fdyes.register_color({
+	name = "gray",
+	displayname = "Gray",
+})
+
+minetest.register_craft({
+	recipe = {"fdyes:white_dye", "fdyes:black_dye"},
+	type = "shapeless",
+	output = "fdyes:gray_dye 2",
+})
+
+fdyes.register_color({
+	name = "orange",
+	displayname = "Orange",
+})
+
+minetest.register_craft({
+	recipe = {"fmain:red_hot_poker"},
+	type = "shapeless",
+	output = "fdyes:orange_dye 2",
+})
+
+
+local dye_recipes = {
+	-- src1, src2, dst
+	-- RYB mixes
+	{"red", "blue", "purple"}, -- "purple"
+	{"yellow", "red", "orange"},
+	{"yellow", "blue", "green"},
+	-- RYB complementary mixes
+--	{"yellow", "purple", "dark_grey"},
+--	{"blue", "orange", "dark_grey"},
+	-- CMY mixes - approximation
+--	{"cyan", "yellow", "green"},
+--	{"cyan", "magenta", "blue"},
+--	{"yellow", "magenta", "red"},
+	-- other mixes that result in a color we have
+	{"red", "green", "brown"},
+--	{"magenta", "blue", "violet"},
+--	{"green", "blue", "cyan"},
+--	{"pink", "violet", "magenta"},
+	-- mixes with black
+	{"white", "black", "grey"},
+--	{"grey", "black", "dark_grey"},
+--	{"green", "black", "dark_green"},
+	{"orange", "black", "brown"},
+	-- mixes with white
+	{"white", "red", "pink"},
+--	{"white", "dark_grey", "grey"},
+--	{"white", "dark_green", "green"},
+}
+
+for _, mix in pairs(dye_recipes) do
+	minetest.register_craft({
+		type = "shapeless",
+		output = "fdyes:" .. mix[3] .. "_dye 2",
+		recipe = {"fdyes:" .. mix[1] .. "_dye", "fdyes:" .. mix[2] .. "_dye"},
+	})
+end

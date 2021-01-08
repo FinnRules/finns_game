@@ -105,6 +105,61 @@ minetest.register_craft({
 	}
 })
 
+--Other side Axes
+minetest.register_craft({
+		output = "fmain:wood_axe",
+		recipe = {
+			{"group:wood", "group:wood"},
+			{"group:stick", "group:wood"},
+			{"group:stick", ""}
+	}
+})
+
+minetest.register_craft({ --might change this to group:cobble
+		output = "fmain:stone_axe",
+		recipe = {
+			{"group:stone", "group:stone"},
+			{"group:stick", "group:stone"},
+			{"group:stick", ""}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:iron_axe",
+		recipe = {
+			{"fmining:iron_ingot", "fmining:iron_ingot"},
+			{"group:stick", "fmining:iron_ingot"},
+			{"group:stick", ""}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:bronze_axe",
+		recipe = {
+			{"fmining:bronze_ingot", "fmining:bronze_ingot"},
+			{"group:stick", "fmining:bronze_ingot"},
+			{"group:stick", ""}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:diamond_axe",
+		recipe = {
+			{"fmining:diamond", "fmining:diamond"},
+			{"group:stick", "fmining:diamond"},
+			{"group:stick", ""}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:tungsten_axe",
+		recipe = {
+			{"fmining:tungsten_ingot", "fmining:tungsten_ingot"},
+			{"group:stick", "fmining:tungsten_ingot"},
+			{"group:stick", ""}
+	}
+})
+
 --Swords
 
 minetest.register_craft({
@@ -212,5 +267,13 @@ minetest.register_craft({
 			{"fmining:tungsten_ingot"},
 			{"group:stick"},
 			{"group:stick"}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:clay",
+		recipe = {
+			{"fmain:clay_lump", "fmain:clay_lump"},
+			{"fmain:clay_lump", "fmain:clay_lump"},
 	}
 })

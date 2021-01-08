@@ -316,12 +316,21 @@ minetest.register_node("fmain:limestone", {
 	drop = "fmain:limestone_chunk 4",
 })
 
-minetest.register_craftitem("fmain:limestone_chunk", {
-	description = "Limestone Chunk",
-	inventory_image = "fmain_limestone_chunk.png",
+minetest.register_node("fmain:clay", {
+	description = "Clay",
+	tiles = {"fmain_clay.png"},
+	groups = {crumbly = 2},
+--	sounds = default.node_sound_gravel_defaults(),
+	drop = {
+		max_items = 1,
+		items = {
+		{items = {"fmain:clay_lump 3"}}
+		}
+	}
 })
 
-minetest.register_craftitem("fmain:fluxed_coal_powder", {
-	description = "Fluxed Coal Powder",
-	inventory_image = "fmain_fluxed_coal_powder.png",
+minetest.register_node("fmain:wool", {
+	description = "Wool",
+	tiles = {"fmain_wool.png"},
+	groups = {oddly_breakable_by_hand = 1},
 })
