@@ -66,17 +66,6 @@ function fmain.get_coal_fuel(item)
 	return foo
 end
 
-fmain.register_coal_craft({
-	recipe = "fmining:iron_ore",
-	cooktime = 150,
-	output = "fmining:iron_ingot",
-})
-
-fmain.register_coal_fuel({
-	recipe = "fmining:coal",
-	burntime = 30,
-})
-
 
 function fmain.get_coal_furnace_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
@@ -438,3 +427,49 @@ minetest.register_craft({
 	}
 })
 
+fmain.register_coal_craft({
+	recipe = "fmining:iron_ore",
+	cooktime = 60,
+	output = "fmining:iron_ingot",
+})
+
+--Pig Iron
+for i in pairs(fmain.tools) do
+	local mname = fmain.tools[i]:split(":")[1]
+	local tname = fmain.tools[i]:split(":")[2]
+	fmain.register_coal_craft({
+		recipe = mname .. ":" .. "iron_" .. tname,
+		output = "fmining:pig_iron_ingot",
+		cooktime = 80,
+	})
+end
+
+fmain.register_coal_craft({
+	recipe = "fmain:cobble",
+	cooktime = 10,
+	output = "fmain:stone",
+})
+
+fmain.register_coal_craft({
+	recipe = "fmining:lead_ore",
+	cooktime = 10,
+	output = "fmining:lead_ingot",
+})
+
+fmain.register_coal_craft({
+	recipe = "fmining:copper_ore",
+	cooktime = 13,
+	output = "fmining:copper_ingot",
+})
+
+fmain.register_coal_craft({
+	recipe = "fmining:tin_ore",
+	cooktime = 10,
+	output = "fmining:tin_ingot",
+})
+
+--fuels
+fmain.register_coal_fuel({
+	recipe = "fmining:coal",
+	burntime = 30,
+})

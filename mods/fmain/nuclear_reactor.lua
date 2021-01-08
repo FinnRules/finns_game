@@ -66,17 +66,6 @@ function fmain.get_nuclear_fuel(item)
 	return foo
 end
 
-fmain.register_nuclear_craft({
-	recipe = "fmining:iron_ore",
-	cooktime = 50,
-	output = "fmining:iron_ingot",
-})
-
-fmain.register_nuclear_fuel({
-	recipe = "fmining:coal",
-	burntime = 30,
-})
-
 
 function fmain.get_nuclear_reactor_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
@@ -438,3 +427,64 @@ minetest.register_craft({
 	}
 })
 ]]
+
+--recipes:
+fmain.register_nuclear_craft({
+	recipe = "fmain:cobble",
+	cooktime = 3,
+	output = "fmain:stone",
+})
+
+fmain.register_nuclear_craft({
+	recipe = "fmining:lead_ore",
+	cooktime = 3,
+	output = "fmining:lead_ingot",
+})
+
+fmain.register_nuclear_craft({
+	recipe = "fmining:copper_ore",
+	cooktime = 3,
+	output = "fmining:copper_ingot",
+})
+
+fmain.register_nuclear_craft({
+	recipe = "fmining:tin_ore",
+	cooktime = 3,
+	output = "fmining:tin_ingot",
+})
+
+fmain.register_nuclear_craft({
+	recipe = "fmining:iron_ore",
+	cooktime = 10,
+	output = "fmining:iron_ingot",
+})
+
+fmain.register_nuclear_craft({
+	recipe = "fmining:silver_ore",
+	cooktime = 10,
+	output = "fmining:silver_ingot",
+})
+
+fmain.register_nuclear_craft({
+	recipe = "fmining:gold_ore",
+	cooktime = 10,
+	output = "fmining:gold_ingot",
+})
+
+fmain.register_nuclear_craft({
+	recipe = "fmining:tungsten_ore",
+	cooktime = 60,
+	output = "fmining:tungsten_ingot",
+})
+
+
+--Fuel
+fmain.register_nuclear_fuel({
+	recipe = "fmining:uranium_ingot",
+	burntime = 200,
+})
+
+fmain.register_nuclear_fuel({
+	recipe = "fmining:thorium_ingot",
+	burntime = 500,
+})

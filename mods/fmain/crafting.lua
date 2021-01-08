@@ -270,10 +270,17 @@ minetest.register_craft({
 	}
 })
 
+--Other
 minetest.register_craft({
 		output = "fmain:clay",
 		recipe = {
 			{"fmain:clay_lump", "fmain:clay_lump"},
 			{"fmain:clay_lump", "fmain:clay_lump"},
 	}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	recipe = {"fmain:limestone_chunk", "fmining:coal", "fmining:coal"},
+	output = "fmain:fluxed_coal_powder 3",
 })

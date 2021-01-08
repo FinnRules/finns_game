@@ -66,17 +66,6 @@ function fmain.get_forge_fuel(item)
 	return foo
 end
 
-fmain.register_forge_craft({
-	recipe = "fmining:iron_ore",
-	cooktime = 100,
-	output = "fmining:iron_ingot",
-})
-
-fmain.register_forge_fuel({
-	recipe = "fmining:coal",
-	burntime = 30,
-})
-
 
 function fmain.get_forge_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
@@ -438,3 +427,68 @@ minetest.register_craft({
 	}
 })
 
+--Recipes:
+fmain.register_forge_craft({
+	recipe = "fmining:lead_ore",
+	cooktime = 8,
+	output = "fmining:lead_ingot",
+})
+
+fmain.register_forge_craft({
+	recipe = "fmining:copper_ore",
+	cooktime = 10,
+	output = "fmining:copper_ingot",
+})
+
+fmain.register_forge_craft({
+	recipe = "fmining:tin_ore",
+	cooktime = 7,
+	output = "fmining:tin_ingot",
+})
+
+fmain.register_forge_craft({
+	recipe = "fmining:iron_ore",
+	cooktime = 45,
+	output = "fmining:iron_ingot",
+})
+
+--Pig Iron
+for i in pairs(fmain.tools) do
+	local mname = fmain.tools[i]:split(":")[1]
+	local tname = fmain.tools[i]:split(":")[2]
+	fmain.register_forge_craft({
+		recipe = mname .. ":" .. "iron_" .. tname,
+		output = "fmining:pig_iron_ingot",
+		cooktime = 50,
+	})
+end
+
+fmain.register_forge_craft({
+	recipe = "fmining:silver_ore",
+	cooktime = 30,
+	output = "fmining:silver_ingot",
+})
+
+fmain.register_forge_craft({
+	recipe = "fmining:gold_ore",
+	cooktime = 30,
+	output = "fmining:gold_ingot",
+})
+
+fmain.register_forge_craft({
+	recipe = "fmining:tungsten_ore",
+	cooktime = 180,
+	output = "fmining:tungsten_ingot",
+})
+
+fmain.register_forge_craft({
+	recipe = "fmining:iron_ore",
+	cooktime = 100,
+	output = "fmining:iron_ingot",
+})
+
+--fuel
+fmain.register_forge_fuel({
+	recipe = "fmain:fluxed_coal_powder",
+	burntime = 25,
+})

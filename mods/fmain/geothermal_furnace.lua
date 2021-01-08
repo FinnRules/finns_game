@@ -69,23 +69,6 @@ function fmain.get_geothermal_fuel(item)
 	return foo
 end
 
-fmain.register_geothermal_craft({
-	recipe = "fmining:iron_ore",
-	cooktime = 150,
-	output = "fmining:iron_ingot",
-})
-
-fmain.register_geothermal_fuel({
-	recipe = "fmining:coal",
-	burntime = 30,
-})
-
-fmain.register_geothermal_fuel({
-	recipe = "fbucket:bucket_lava",
-	burntime = 100,
-	bucket = "fbucket:bucket_empty",
-})
-
 function fmain.get_geothermal_furnace_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
 		"list[context;src;2.75,0.5;1,1;]"..
@@ -449,3 +432,71 @@ minetest.register_craft({
 	}
 })
 ]]
+
+--Recipes
+fmain.register_geothermal_craft({
+	recipe = "fmining:iron_ore",
+	cooktime = 30,
+	output = "fmining:iron_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmain:cobble",
+	cooktime = 5,
+	output = "fmain:stone",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:lead_ore",
+	cooktime = 5,
+	output = "fmining:lead_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:copper_ore",
+	cooktime = 6,
+	output = "fmining:copper_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:tin_ore",
+	cooktime = 5,
+	output = "fmining:tin_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:silver_ore",
+	cooktime = 20,
+	output = "fmining:silver_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:gold_ore",
+	cooktime = 20,
+	output = "fmining:gold_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:uranium_ore",
+	cooktime = 20,
+	output = "fmining:uranium_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:tungsten_ore",
+	cooktime = 120,
+	output = "fmining:tungsten_ingot",
+})
+
+fmain.register_geothermal_craft({
+	recipe = "fmining:thorium_ore",
+	cooktime = 25,
+	output = "fmining:thorium_ingot",
+})
+
+--Fuel
+fmain.register_geothermal_fuel({
+	recipe = "fbucket:bucket_lava",
+	burntime = 150,
+	bucket = "fbucket:bucket_empty",
+})

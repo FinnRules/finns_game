@@ -61,7 +61,7 @@ minetest.register_craft({
 		}
 })
 	
-	
+--[[	
 minetest.register_craft({
 	type = "cooking",
 	output = "fmining:coal_ore",
@@ -138,4 +138,11 @@ minetest.register_craft({
 	type = "fuel",
 	recipe = "fmining:coal",
 	burntime = 38,
+})
+]]
+
+minetest.register_craft({
+	type = "shapeless",
+	recipe = {"fmining:tin_ingot", "fmining:copper_ingot"},
+	output = "fmining:bronze_ingot 2"
 })

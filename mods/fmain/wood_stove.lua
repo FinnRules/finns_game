@@ -66,32 +66,6 @@ function fmain.get_stove_fuel(item)
 	return foo
 end
 
-fmain.register_stove_craft({
-	recipe = "fmining:copper_ore",
-	cooktime = 10,
-	output = "fmining:copper_ingot",
-})
-
-fmain.register_stove_fuel({
-	recipe = "fmain:maple_planks",
-	burntime = 30,
-})
-
-fmain.register_stove_fuel({
-	recipe = "fmain:redwood_planks",
-	burntime = 30,
-})
-
-fmain.register_stove_fuel({
-	recipe = "fmain:weeping_willow_planks",
-	burntime = 30,
-})
-
-fmain.register_stove_fuel({
-	recipe = "fmain:cherry_planks",
-	burntime = 30,
-})
-
 function fmain.get_wood_stove_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
 		"list[context;src;2.75,0.5;1,1;]"..
@@ -451,4 +425,86 @@ minetest.register_craft({
 		{"group:cobble", "group:cobble", "group:cobble"},
 	}
 })
+
+--Recipes:
+fmain.register_stove_craft({
+	recipe = "fmining:copper_ore",
+	cooktime = 20,
+	output = "fmining:copper_ingot",
+})
+
+fmain.register_stove_craft({
+	recipe = "fmining:cobble",
+	cooktime = 15,
+	output = "fmining:stone",
+})
+
+fmain.register_stove_craft({
+	recipe = "fmining:lead_ore",
+	cooktime = 15,
+	output = "fmining:lead_ingot",
+})
+
+fmain.register_stove_craft({
+	recipe = "fmining:tin_ore",
+	cooktime = 15,
+	output = "fmining:tin_ingot",
+})
+
+
+
+
+--may change these variables to globals fmain.wood etc at some point for wider use
+fmain.wood = {"cherry", "weeping_willow", "redwood", "maple", "white_oak", "poplar"}
+
+for i in pairs(fmain.wood) do
+	fmain.register_stove_fuel({
+		recipe = "fmain:" .. fmain.wood[i] .. "_planks",
+		burntime = 7,
+	})
+end
+
+for i in pairs(fmain.wood) do
+	fmain.register_stove_fuel({
+		recipe = "fmain:" .. fmain.wood[i] .. "_wood",
+		burntime = 28,
+	})
+end
+
+for i in pairs(fmain.wood) do
+	fmain.register_stove_fuel({
+		recipe = "fmain:" .. fmain.wood[i] .. "_wood_fence",
+		burntime = 7,
+	})
+end
+
+local leaves = {"maple_leaves", "maple_leaves_green", "redwood_leaves", "poplar_leaves", "cherry_blossoms", "cherry_white_blossoms", "weeping_willow_leaves", "white_oak_leaves"}
+
+for i in pairs(leaves) do
+	fmain.register_stove_fuel({
+		recipe = "fmain:" .. leaves[i],
+		burntime = 4,
+	})
+end
+
+local grass = {"short_grass", "redwood_short_grass"}
+
+for i in pairs(grass) do
+	fmain.register_stove_fuel({
+		recipe = "fmain:" .. grass[i],
+		burntime = 2,
+	})
+end
+
+fmain.tools = {"fmain:axe", "fmain:shovel", "fmain:sword", "fmining:pic", "ffarming:hoe"}
+
+for i in pairs(fmain.tools) do
+	local mname = fmain.tools[i]:split(":")[1]
+	local tname = fmain.tools[i]:split(":")[2]
+	fmain.register_stove_fuel({
+		recipe = mname .. ":" .. "wood_" .. tname,
+		burntime = 5,
+	})
+end
+
 
