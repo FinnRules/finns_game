@@ -455,7 +455,7 @@ fmain.register_stove_craft({
 
 for i in pairs(fmain.wood) do
 	fmain.register_stove_craft({
-		recipe = "fmain" .. fmain.wood[i] .. "_wood",
+		recipe = "fmain:" .. fmain.wood[i] .. "_wood",
 		cooktime = 10,
 		output = "fmain:charcoal",
 	})

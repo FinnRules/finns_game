@@ -1,7 +1,7 @@
 minetest.register_node("fmining:coal_ore", {
 	description = "Coal Ore",
 	tiles = {"fmain_stone.png^fmining_coal_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 2, ore = 1},
 	drop = "fmining:coal",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -9,7 +9,7 @@ minetest.register_node("fmining:coal_ore", {
 minetest.register_node("fmining:rich_coal_ore", {
 	description = "Rich Coal Ore",
 	tiles = {"fmain_stone.png^fmining_rich_coal_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 2, ore = 1},
 	drop = "fmining:coal 2",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -22,7 +22,7 @@ minetest.register_craftitem("fmining:coal",{
 minetest.register_node("fmining:iron_ore", {
 	description = "Iron Ore",
 	tiles = {"fmain_stone.png^fmining_iron_ore.png"},
-	groups = {cracky = 2, ore = 1},
+	groups = {cracky = 3, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -60,7 +60,7 @@ minetest.register_craftitem("fmining:bronze_ingot", {
 minetest.register_node("fmining:silver_ore", {
 	description = "Silver Ore",
 	tiles = {"fmain_stone.png^fmining_silver_ore.png"},
-	groups = {cracky = 5, ore = 1},
+	groups = {cracky = 3, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -86,7 +86,7 @@ minetest.register_craftitem("fmining:gold_ingot", {
 minetest.register_node("fmining:sapphire_ore", {
 	description = "Sapphire Ore",
 	tiles = {"fmain_stone.png^fmining_sapphire_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 4, ore = 1},
 	drop = "fmining:sapphire",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -99,7 +99,7 @@ minetest.register_craftitem("fmining:sapphire", {
 minetest.register_node("fmining:emerald_ore", {
 	description = "Emerald Ore",
 	tiles = {"fmain_stone.png^fmining_emerald_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 4, ore = 1},
 	drop = "fmining:emerald",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -111,7 +111,7 @@ minetest.register_craftitem("fmining:emerald",{
 minetest.register_node("fmining:ruby_ore", {
 	description = "Ruby Ore",
 	tiles = {"fmain_stone.png^fmining_ruby_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 4, ore = 1},
 	drop = "fmining:ruby",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -124,7 +124,7 @@ minetest.register_craftitem("fmining:ruby", {
 minetest.register_node("fmining:lapis_ore", {
 	description = "Lapis Lazuli Ore",
 	tiles = {"fmain_stone.png^fmining_lapis_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 4, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -132,7 +132,7 @@ minetest.register_node("fmining:lapis_ore", {
 minetest.register_node("fmining:tungsten_ore", {
 	description = "Tungsten Ore",
 	tiles = {"fmain_stone.png^fmining_tungsten_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 5, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -153,7 +153,7 @@ minetest.register_node("fmining:opal_ore", {
 minetest.register_node("fmining:tin_ore", {
 	description = "Tin Ore",
 	tiles = {"fmain_stone.png^fmining_tin_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 2, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -166,7 +166,7 @@ minetest.register_craftitem("fmining:tin_ingot", {
 minetest.register_node("fmining:diamond_ore", {
 	description = "Diamond Ore",
 	tiles = {"fmain_stone.png^fmining_diamond_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 4, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -174,7 +174,7 @@ minetest.register_node("fmining:diamond_ore", {
 minetest.register_node("fmining:uranium_ore", {
 	description = "Uranium Ore",
 	tiles = {"fmain_stone.png^fmining_uranium_ore.png"},
-	groups = {cracky = 3, ore = 1},
+	groups = {cracky = 4, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
 })
