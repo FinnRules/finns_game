@@ -426,6 +426,8 @@ minetest.register_craft({
 	}
 })
 
+fmain.wood = {"cherry", "weeping_willow", "redwood", "maple", "white_oak", "poplar"}
+
 --Recipes:
 fmain.register_stove_craft({
 	recipe = "fmining:copper_ore",
@@ -451,12 +453,16 @@ fmain.register_stove_craft({
 	output = "fmining:tin_ingot",
 })
 
-
+for i in pairs(fmain.wood) do
+	fmain.register_stove_craft({
+		recipe = "fmain" .. fmain.wood[i] .. "_wood",
+		cooktime = 10,
+		output = "fmain:charcoal",
+	})
+end
 
 
 --may change these variables to globals fmain.wood etc at some point for wider use
-fmain.wood = {"cherry", "weeping_willow", "redwood", "maple", "white_oak", "poplar"}
-
 for i in pairs(fmain.wood) do
 	fmain.register_stove_fuel({
 		recipe = "fmain:" .. fmain.wood[i] .. "_planks",

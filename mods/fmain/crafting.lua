@@ -284,3 +284,19 @@ minetest.register_craft({
 	recipe = {"fmain:limestone_chunk", "fmining:coal", "fmining:coal"},
 	output = "fmain:fluxed_coal_powder 3",
 })
+
+minetest.register_craft({
+		output = "fmain:torch 4",
+		recipe = {
+			{"fmining:coal"},
+			{"fmain:stick"},
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:torch 4",
+		recipe = {
+			{"fmain:charcoal"},
+			{"fmain:stick"},
+	}
+})

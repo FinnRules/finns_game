@@ -19,3 +19,8 @@ minetest.register_craftitem("fmain:fluxed_coal_powder", {
 	description = "Fluxed Coal Powder",
 	inventory_image = "fmain_fluxed_coal_powder.png",
 })
+
+minetest.register_craftitem("fmain:charcoal", {
+	description = "Charcoal",
+	inventory_image = "fmining_coal.png",
+})
