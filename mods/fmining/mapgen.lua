@@ -49,22 +49,22 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "fmining:tin_ore",
 	wherein        = "fmain:stone",
-	clust_scarcity = 12 * 12 * 12,
+	clust_scarcity = 14 * 14 * 14,
 	clust_num_ores = 5,
 	clust_size     = 3,
-	y_max          = 31000,
-	y_min          = 1025,
+	y_max          = 0,
+	y_min          = -31000,
 })
 
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "fmining:tin_ore",
 	wherein        = "fmain:stone",
-	clust_scarcity = 14 * 14 * 14,
+	clust_scarcity = 13 * 13 * 13,
 	clust_num_ores = 4,
 	clust_size     = 3,
-	y_max          = -32,
-	y_min          = -127,
+	y_max          = -85,
+	y_min          = -31000,
 })
 
 minetest.register_ore({
@@ -74,7 +74,7 @@ minetest.register_ore({
 	clust_scarcity = 12 * 12 * 12,
 	clust_num_ores = 5,
 	clust_size     = 3,
-	y_max          = -128,
+	y_max          = -150,
 	y_min          = -31000,
 })
 
@@ -141,11 +141,11 @@ minetest.register_ore({
 	ore_type = "scatter",
 	ore = "fmining:copper_ore",
 	wherein = "fmain:stone",
-	clust_scarcity = 12 * 12 * 12,
+	clust_scarcity = 14 * 14 * 14,
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = 0,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -156,7 +156,7 @@ minetest.register_ore({
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -50,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -167,7 +167,7 @@ minetest.register_ore({
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -300,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 -- Gold
@@ -191,7 +191,7 @@ minetest.register_ore({
 	clust_num_ore = 4,
 	clust_size = 4,
 	y_max = -100,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -202,7 +202,7 @@ minetest.register_ore({
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -200,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 --Silver
@@ -214,7 +214,7 @@ minetest.register_ore({
 	clust_num_ore = 4,
 	clust_size = 4,
 	y_max = -50,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -225,7 +225,7 @@ minetest.register_ore({
 	clust_num_ore = 4,
 	clust_size = 4,
 	y_max = -100,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -236,7 +236,7 @@ minetest.register_ore({
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -200,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 --Diamond
@@ -248,7 +248,7 @@ minetest.register_ore({
 	clust_num_ore = 4,
 	clust_size = 4,
 	y_max = -75,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -259,7 +259,7 @@ minetest.register_ore({
 	clust_num_ore = 5,
 	clust_size = 4,
 	y_max = -150,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -270,7 +270,7 @@ minetest.register_ore({
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -300,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 --Tungsten
@@ -282,7 +282,7 @@ minetest.register_ore({
 	clust_num_ore = 4,
 	clust_size = 4,
 	y_max = -150,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -293,7 +293,7 @@ minetest.register_ore({
 	clust_num_ore = 5,
 	clust_size = 5,
 	y_max = -230,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -304,7 +304,7 @@ minetest.register_ore({
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -300,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 --Thorium
@@ -316,7 +316,7 @@ minetest.register_ore({
 	clust_num_ore = 5,
 	clust_size = 6,
 	y_max = -300,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 minetest.register_ore({
@@ -327,7 +327,7 @@ minetest.register_ore({
 	clust_num_ore = 7,
 	clust_size = 6,
 	y_max = -500,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 --Opal
@@ -339,7 +339,7 @@ minetest.register_ore({
 	clust_num_ore = 2,
 	clust_size = 2,
 	y_max = -130,
-	y_min = 31000,
+	y_min = -31000,
 })
 
 --Lapis Lazuli
