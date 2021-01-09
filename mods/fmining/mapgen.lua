@@ -136,12 +136,12 @@ minetest.register_ore({
 })
 
 --Copper
-
+--[[
 minetest.register_ore({
 	ore_type = "scatter",
 	ore = "fmining:copper_ore",
 	wherein = "fmain:stone",
-	clust_scarcity = 14 * 14 * 14,
+	clust_scarcity = 13 * 13 * 13,
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = 0,
@@ -152,7 +152,7 @@ minetest.register_ore({
 	ore_type = "scatter",
 	ore = "fmining:copper_ore",
 	wherein = "fmain:stone",
-	clust_scarcity = 13 * 12 * 13,
+	clust_scarcity = 13 * 12 * 11,
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -50,
@@ -163,11 +163,44 @@ minetest.register_ore({
 	ore_type = "scatter",
 	ore = "fmining:copper_ore",
 	wherein = "fmain:stone",
-	clust_scarcity = 12 * 13 * 12,
+	clust_scarcity = 11 * 11 * 11,
 	clust_num_ore = 6,
 	clust_size = 5,
 	y_max = -300,
 	y_min = -31000,
+})
+]]
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "fmining:copper_ore",
+	wherein        = "fmain:stone",
+	clust_scarcity = 14 * 14 * 14,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_max          = 0,
+	y_min          = -31000,
+})
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "fmining:copper_ore",
+	wherein        = "fmain:stone",
+	clust_scarcity = 13 * 13 * 13,
+	clust_num_ores = 4,
+	clust_size     = 3,
+	y_max          = -85,
+	y_min          = -31000,
+})
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "fmining:copper_ore",
+	wherein        = "fmain:stone",
+	clust_scarcity = 12 * 12 * 12,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_max          = -150,
+	y_min          = -31000,
 })
 
 -- Gold
