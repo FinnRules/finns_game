@@ -513,4 +513,11 @@ for i in pairs(fmain.tools) do
 	})
 end
 
-
+local sand = {"sand", "black_sand", "white_sand"}
+for i in pairs(sand) do
+	fmain.register_stove_craft({
+		recipe = "fmain:" .. sand[i],
+		cooktime = 20,
+		output = "fmining:glass",
+	})
+end

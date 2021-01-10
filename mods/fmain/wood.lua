@@ -20,7 +20,6 @@ Wood from trees does not contain the wood group, that is for planks only!
 	
 ]]
 
-
 --Maple
 
 minetest.register_node("fmain:maple_wood", {
@@ -77,7 +76,7 @@ minetest.register_node("fmain:maple_leaves", {
 	},
 --	sounds = default.node_sound_leaves_defaults(),
 
-	after_place_node = after_place_leaves,
+	after_place_node = fmain.after_place_leaves,
 })
 
 minetest.register_node("fmain:maple_leaves_green", {
@@ -105,7 +104,7 @@ minetest.register_node("fmain:maple_leaves_green", {
 	},
 --	sounds = default.node_sound_leaves_defaults(),
 
-	after_place_node = after_place_leaves,
+	after_place_node = fmain.after_place_leaves,
 })
 
 fmain.register_fence("fmain:maple_wood_fence", {
@@ -176,7 +175,7 @@ minetest.register_node("fmain:redwood_leaves", {
     },
 --    sounds = fmain.node_sound_leaves_defaults(),
 
-    after_place_node = after_place_leaves,
+    after_place_node = fmain.after_place_leaves,
 })
 
 fmain.register_fence("fmain:redwood_fence", {
@@ -249,7 +248,7 @@ minetest.register_node("fmain:poplar_leaves", {
     },
 --    sounds = fmain.node_sound_leaves_defaults(),
 
-    after_place_node = after_place_leaves,
+    after_place_node = fmain.after_place_leaves,
 })
 
 fmain.register_fence("fmain:poplar_wood_fence", {
@@ -320,7 +319,7 @@ minetest.register_node("fmain:cherry_blossoms", {
     },
 --    sounds = fmain.node_sound_leaves_defaults(),
 
-    after_place_node = after_place_leaves,
+    after_place_node = fmain.after_place_leaves,
 })
 
 minetest.register_node("fmain:cherry_white_blossoms", {
@@ -348,7 +347,7 @@ minetest.register_node("fmain:cherry_white_blossoms", {
     },
 --    sounds = fmain.node_sound_leaves_defaults(),
 
-    after_place_node = after_place_leaves,
+    after_place_node = fmain.after_place_leaves,
 })
 
 fmain.register_fence("fmain:cherry_wood_fence", {
@@ -419,7 +418,7 @@ minetest.register_node("fmain:weeping_willow_leaves", {
     },
 --    sounds = fmain.node_sound_leaves_defaults(),
 
-    after_place_node = after_place_leaves,
+    after_place_node = fmain.after_place_leaves,
 })
 
 fmain.register_fence("fmain:weeping_willow_wood_fence", {
@@ -490,7 +489,7 @@ minetest.register_node("fmain:white_oak_leaves", {
     },
 --    sounds = fmain.node_sound_leaves_defaults(),
 
-    after_place_node = after_place_leaves,
+    after_place_node = fmain.after_place_leaves,
 })
 
 fmain.register_fence("fmain:white_oak_wood_fence", {
@@ -503,4 +502,43 @@ fmain.register_fence("fmain:white_oak_wood_fence", {
     material = "fmain:white_oak_planks",
     groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
     sounds = fmain.node_sound_wood_defaults()
+})
+
+
+--LEAFDECAY
+fmain.register_leafdecay({
+	trunks = {"fmain:maple_wood"},
+	leaves = {"fmain:maple_leaves", "fmain:maple_leaves_green"},
+	radius = 3,
+})
+
+fmain.register_leafdecay({
+	trunks = {"fmain:poplar_wood"},
+	leaves = {"fmain:poplar_leaves"},
+	radius = 2,
+})
+
+fmain.register_leafdecay({
+	trunks = {"fmain:cherry_wood"},
+	leaves = {"fmain:cherry_blossoms", "fmain:cherry_white_blossoms"},
+	radius = 3,
+})
+
+fmain.register_leafdecay({
+	trunks = {"fmain:redwood_wood"},
+	leaves = {"fmain:redwood_leaves"},
+	radius = 4,
+})
+
+--May or may not work as intended
+fmain.register_leafdecay({
+	trunks = {"fmain:weeping_willow_wood"},
+	leaves = {"fmain:weeping_willow_leaves"},
+	radius = 4,
+})
+
+fmain.register_leafdecay({
+	trunks = {"fmain:white_oak_wood"},
+	leaves = {"fmain:white_oak_leaves"},
+	radius = 5,
 })

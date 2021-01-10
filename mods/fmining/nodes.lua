@@ -167,8 +167,13 @@ minetest.register_node("fmining:diamond_ore", {
 	description = "Diamond Ore",
 	tiles = {"fmain_stone.png^fmining_diamond_ore.png"},
 	groups = {cracky = 4, ore = 1},
---	drop = "default:coal_lump",
+	drop = "fmining:diamond",
 --	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_craftitem("fmining:diamond", {
+	description = "Diamond",
+	inventory_image = "fmining_diamond.png",
 })
 
 minetest.register_node("fmining:uranium_ore", {
@@ -187,10 +192,21 @@ minetest.register_node("fmining:lead_ore", {
 --	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_craftitem("fmining:lead_ingot", {
+	description = "Lead Ingot",
+	inventory_image = "fmining_lead_ingot.png",
+})
+
 minetest.register_node("fmining:thorium_ore", {
 	description = "Thorium Ore",
 	tiles = {"fmain_stone.png^fmining_thorium_ore.png"},
 	groups = {cracky = 6, ore = 1},
 --	drop = "default:coal_lump",
 --	sounds = default.node_sound_stone_defaults(),
+})
+
+
+minetest.register_craftitem("fmining:thorium_ingot", {
+	description = "Thorium Ingot",
+	inventory_image = "fmining_thorium_ingot.png",
 })

@@ -19,6 +19,13 @@ minetest.register_alias("mapgen_gravel", "fmain:gravel")
 --Biomes
 
 minetest.register_biome({
+	name = "cave_main",
+	node_cave_liquid = {"fmain:water_source", "fmain:lava_source"},
+	y_max = -300,
+	y_min = -31000,
+})
+
+minetest.register_biome({
 		name = "maple_forest",
 		node_top = "fmain:dirt_with_litter",
 		depth_top = 1,
@@ -84,8 +91,8 @@ minetest.register_biome({
 		node_stone = "fmain:stone",
 		node_riverbed = "fmain:dirt",
 		depth_riverbed = 2,
-		y_max = 300,
-		y_min = 0,
+		y_max = 31000,
+		y_min = 100,
 		heat_point = 60,
 		humidity_point = 85,
 })
@@ -451,6 +458,7 @@ minetest.register_ore({
 		},
 	})
 --Lava generation placeholder
+--[[
 minetest.register_ore({
 		ore_type        = "blob",
 		ore             = "fmain:lava_source",
@@ -469,3 +477,4 @@ minetest.register_ore({
 			persist = 0.0
 		},
 	})
+]]

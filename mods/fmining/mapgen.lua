@@ -106,7 +106,7 @@ minetest.register_ore({
 	ore_type = "scatter",
 	ore = "fmining:iron_ore",
 	wherein = "fmain:stone",
-	clust_scarcity = 20 * 20 * 20,
+	clust_scarcity = 16 * 17 * 16,
 	clust_num_ores = 5,
 	clust_size = 4,
 	y_max = 0,
@@ -117,10 +117,10 @@ minetest.register_ore({
 	ore_type = "scatter",
 	ore = "fmining:iron_ore",
 	wherein = "fmain:stone",
-	clust_scarcity = 15 * 15 * 15,
+	clust_scarcity = 13 * 13 * 13,
 	clust_num_ore = 6,
 	clust_size = 5,
-	y_max = -200,
+	y_max = -100,
 	y_min = -31000,
 })
 
@@ -128,10 +128,10 @@ minetest.register_ore({
 	ore_type = "scatter",
 	ore = "fmining:iron_ore",
 	wherein = "fmain:stone",
-	clust_scarcity = 15 * 15 * 15,
+	clust_scarcity = 12 * 12 * 12,
 	clust_num_ore = 6,
 	clust_size = 5,
-	y_max = -500,
+	y_max = -300,
 	y_min = -31000,
 })
 
@@ -476,7 +476,7 @@ minetest.register_ore({
 	clust_scarcity = 10 * 11 * 10,
 	clust_num_ore = 8,
 	clust_size = 5,
-	y_max = -150,
+	y_max = -120,
 	y_min = -31000,
 })
 

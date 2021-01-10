@@ -21,7 +21,7 @@ end
 
 local handlers = {}
 
-minetest.register_node("jukebox:box", {
+minetest.register_node("jukebox:jukebox", {
 	description = "Jukebox",
 	paramtype2 = "facedir",
 	stack_max = 1,

@@ -25,7 +25,7 @@ minetest.register_node("fmain:cobble", {
 	description = "Cobblestone",
 	tiles = {"fmain_cobble.png"},
 	is_ground_content = false,
-	groups = {cracky = 3, stone = 2, cobble = 1},
+	groups = {cracky = 1, stone = 2, cobble = 1},
 })
 --[[
 minetest.register_node("fmain:bluestone_cobble", {
@@ -230,21 +230,21 @@ minetest.register_node("fmain:gravel", {
 minetest.register_node("fmain:sandstone", {
 	description = "Sandstone",
 	tiles = {"fmain_sandstone.png"},
-	groups = {crumbly = 1, cracky = 3},
+	groups = {cracky = 1},
 --	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("fmain:white_sandstone", {
 	description = "White Sandstone",
 	tiles = {"fmain_sandstone.png"},
-	groups = {crumbly = 1, cracky = 3},
+	groups = {cracky = 1},
 --	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("fmain:black_sandstone", {
 	description = "Black Sandstone",
 	tiles = {"fmain_black_sandstone.png"},
-	groups = {crumbly = 1, cracky = 3},
+	groups = {cracky = 1},
 --	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -285,6 +285,11 @@ minetest.register_node("fmain:dirt_with_blossoms", {
 --    sounds = default.node_sound_dirt_defaults({
 --        footstep = {name = "default_grass_footstep", gain = 0.25},
 --    }),
+	soil = {
+			base = "fmain:dirt_with_litter",
+			dry = "ffarming:soil",
+			wet = "ffarming:soil_wet"
+		}
 })
 
 
@@ -298,6 +303,11 @@ minetest.register_node("fmain:dirt_with_white_blossoms", {
 --    sounds = default.node_sound_dirt_defaults({
 --        footstep = {name = "default_grass_footstep", gain = 0.25},
 --    }),
+	soil = {
+			base = "fmain:dirt_with_litter",
+			dry = "ffarming:soil",
+			wet = "ffarming:soil_wet"
+		}
 })
 
 
@@ -334,3 +344,17 @@ minetest.register_node("fmain:wool", {
 	tiles = {"fmain_wool.png"},
 	groups = {oddly_breakable_by_hand = 1},
 })
+
+--Glass
+minetest.register_node("fmain:glass", {
+	description = "Glass",
+	drawtype = "glasslike_framed_optional",
+	tiles = {"fmain_glass.png", "fmain_glass_detail.png"},
+	paramtype = "light",
+	paramtype2 = "glasslikeliquidlevel",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	groups = {cracky = 1, oddly_breakable_by_hand = 2},
+--	sounds = default.node_sound_glass_defaults(),
+})
+

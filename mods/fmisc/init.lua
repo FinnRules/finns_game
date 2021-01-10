@@ -6,7 +6,7 @@ minetest.register_decoration({
     biomes = {"grassland", "moss_mountain", "white_forest", "mixed_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = minetest.get_modpath("fmapgen") .. "/schematics/prealpha_veg_garden.mts",
+    schematic = minetest.get_modpath("fmisc") .. "/schematics/prealpha_veg_garden.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -22,3 +22,9 @@ minetest.register_decoration({
 	    y_min = 1,
 	    decoration = "overproduced:cotton_wild",
 	})
+--Sets 1.2 as default speed
+minetest.register_on_joinplayer(function(player)
+	player:set_physics_override({
+		speed = 1.2,
+	})
+end)
