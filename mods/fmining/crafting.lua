@@ -60,6 +60,24 @@ minetest.register_craft({
 			{"", "group:stick", ""}
 		}
 })
+
+minetest.register_craft({
+		output = "fmining:ruby_pic",
+		recipe = {
+			{"fmining:ruby", "fmining:ruby", "fmining:ruby"},
+			{"", "group:stick", ""},
+			{"", "group:stick", ""}
+		}
+})
+
+minetest.register_craft({
+		output = "fmining:sapphire_pic",
+		recipe = {
+			{"fmining:sapphire", "fmining:sapphire", "fmining:sapphire"},
+			{"", "group:stick", ""},
+			{"", "group:stick", ""}
+		}
+})
 	
 --[[	
 minetest.register_craft({

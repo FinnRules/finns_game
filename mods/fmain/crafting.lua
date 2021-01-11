@@ -289,7 +289,7 @@ minetest.register_craft({
 		output = "fmain:torch 4",
 		recipe = {
 			{"fmining:coal"},
-			{"fmain:stick"},
+			{"group:stick"},
 	}
 })
 
@@ -297,6 +297,23 @@ minetest.register_craft({
 		output = "fmain:torch 4",
 		recipe = {
 			{"fmain:charcoal"},
-			{"fmain:stick"},
+			{"group:stick"},
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:ladder 5",
+		recipe = {
+			{"group:stick", "", "group:stick"},
+			{"group:stick", "group:stick", "group:stick"},
+			{"group:stick", "", "group:stick"}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:limestone",
+		recipe = {
+			{"fmain:limestone_chunk", "fmain:limestone_chunk"},
+			{"fmain:limestone_chunk", "fmain:limestone_chunk"},
 	}
 })

@@ -9,7 +9,6 @@ minetest.register_node("fmain:nemophila", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -37,7 +36,6 @@ minetest.register_node("fmain:bleeding_heart", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -145,7 +143,6 @@ minetest.register_node("fmain:bells_of_ireland", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -173,7 +170,6 @@ minetest.register_node("fmain:snowdrop", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -201,7 +197,6 @@ minetest.register_node("fmain:dahlia", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -229,7 +224,6 @@ minetest.register_node("fmain:rose", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -257,7 +251,6 @@ minetest.register_node("fmain:hellebore", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -285,7 +278,6 @@ minetest.register_node("fmain:purple_orchid", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -313,7 +305,6 @@ minetest.register_node("fmain:red_hot_poker", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	buildable_to = true,
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
 --	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {

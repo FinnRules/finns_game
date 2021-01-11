@@ -455,7 +455,7 @@ minetest.register_node("fmain:white_oak_wood", {
 })
 
 minetest.register_node("fmain:white_oak_planks", {
-    description = "White_Oak Planks",
+    description = "White Oak Planks",
     paramtype2 = "facedir",
     place_param2 = 0,
     tiles = {"fmain_white_oak_planks.png"},

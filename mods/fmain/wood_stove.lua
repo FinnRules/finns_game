@@ -518,6 +518,6 @@ for i in pairs(sand) do
 	fmain.register_stove_craft({
 		recipe = "fmain:" .. sand[i],
 		cooktime = 20,
-		output = "fmining:glass",
+		output = "fmain:glass",
 	})
 end

@@ -124,9 +124,14 @@ minetest.register_craftitem("fmining:ruby", {
 minetest.register_node("fmining:lapis_ore", {
 	description = "Lapis Lazuli Ore",
 	tiles = {"fmain_stone.png^fmining_lapis_ore.png"},
-	groups = {cracky = 4, ore = 1},
---	drop = "default:coal_lump",
+	groups = {cracky = 3, ore = 1},
+	drop = "fmining:lapis 3",
 --	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_craftitem("fmining:lapis", {
+	description = "Lapis Lazuli",
+	inventory_image = "fmining_lapis.png",
 })
 
 minetest.register_node("fmining:tungsten_ore", {
@@ -146,8 +151,13 @@ minetest.register_node("fmining:opal_ore", {
 	description = "Opal Ore",
 	tiles = {"fmain_stone.png^fmining_opal_ore.png"},
 	groups = {cracky = 3, ore = 1},
---	drop = "default:coal_lump",
+	drop = "fmining:opal",
 --	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_craftitem("fmining:opal", {
+	description = "Opal",
+	inventory_image = "fmining_opal.png",
 })
 
 minetest.register_node("fmining:tin_ore", {
