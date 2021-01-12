@@ -36,3 +36,7 @@ minetest.override_item("overproduced:tomato", {
 minetest.override_item("overproduced:carrot", {
 	on_use = minetest.item_eat(4)
 })
+
+minetest.override_item("overproduced:potato", {
+	on_use = minetest.item_eat(4)
+})

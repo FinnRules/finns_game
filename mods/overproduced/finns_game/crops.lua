@@ -151,6 +151,12 @@ overproduced.register_plant("overproduced:habanero", {
 	seeddrop = false,
 })
 
+minetest.register_craft({
+	type = "shapeless",
+	output = "overproduced:seed_habanero 3",
+	recipe = {"overproduced:habanero"},
+})
+
 overproduced.register_plant("overproduced:potato", {
 	description = "Potato",
 	harvest_description = "Potato_1",

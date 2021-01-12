@@ -7,22 +7,22 @@ STAMINA_HEALTH_TICK = 4		-- time in seconds after player gets healed/damaged
 STAMINA_MOVE_TICK = 0.5		-- time in seconds after the movement is checked
 STAMINA_POISON_TICK = 1.25	-- time in seconds after player is poisoned
 
-STAMINA_EXHAUST_DIG = 3		-- exhaustion increased this value after digged node
-STAMINA_EXHAUST_PLACE = 1	-- .. after digging node
-STAMINA_EXHAUST_MOVE = 1.5	-- .. if player movement detected
-STAMINA_EXHAUST_JUMP = 5	-- .. if jumping
-STAMINA_EXHAUST_CRAFT = 20	-- .. if player crafts
+STAMINA_EXHAUST_DIG = 2		-- exhaustion increased this value after digged node (from 3)
+STAMINA_EXHAUST_PLACE = 0.5	-- .. after digging node (from 1)
+STAMINA_EXHAUST_MOVE = 1	-- .. if player movement detected (from 1.5)
+STAMINA_EXHAUST_JUMP = 3	-- .. if jumping (from 5)
+STAMINA_EXHAUST_CRAFT = 0	-- .. if player crafts (from 20)
 STAMINA_EXHAUST_PUNCH = 40	-- .. if player punches another player
 STAMINA_EXHAUST_LVL = 160	-- at what exhaustion player saturation gets lowered
 
 STAMINA_HEAL = 1			-- number of HP player gets healed after STAMINA_HEALTH_TICK
 STAMINA_HEAL_LVL = 5		-- lower level of saturation needed to get healed
 STAMINA_STARVE = 1			-- number of HP player gets damaged by stamina after STAMINA_HEALTH_TICK
-STAMINA_STARVE_LVL = 3		-- level of staturation that causes starving
+STAMINA_STARVE_LVL = 2		-- level of staturation that causes starving (from 3)
 
 STAMINA_VISUAL_MAX = 20		-- hud bar extends only to 20
 
-SPRINT_SPEED = 0.3			-- how much faster player can run if satiated
+SPRINT_SPEED = 0.5			-- how much faster player can run if satiated (from .3)
 SPRINT_JUMP = 0.1			-- how much higher player can jump if satiated
 SPRINT_DRAIN = 0.35			-- how fast to drain satation while sprinting (0-1)
 
@@ -355,7 +355,7 @@ end
 						maxsize = 1.0,
 						vertical = false,
 						collisiondetection = false,
-						texture = "default_dirt.png",
+						texture = "fmain_dirt.png",
 					})
 
 						end

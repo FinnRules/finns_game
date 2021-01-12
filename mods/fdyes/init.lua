@@ -1,6 +1,6 @@
 fdyes = {}
 fdyes.path = minetest.get_modpath("fdyes")
-
+fdyes.dyes = {}
 
 function fdyes.register_color(def)
 --	if not def.displayname then
@@ -19,6 +19,11 @@ function fdyes.register_color(def)
 			tiles = {"fdyes_" .. def.name .. "_wool.png"},
 			groups = {oddly_breakable_by_hand = 1},
 		})
+		minetest.register_craft({
+			type = "shapeless",
+			recipe = {"fmain:wool", "fdyes:" .. def.name .. "_dye"},
+			output = "fdyes:" .. def.name .. "_wool",	
+		})
 	end
 	if not def.noclay then
 		minetest.register_node("fdyes:" .. def.name .. "_baked_clay", {
@@ -27,7 +32,7 @@ function fdyes.register_color(def)
 			groups = {cracky = 1},
 		})
 	end
-
+--	table.insert(fdyes.dyes, def.name)
 	
 
 end
