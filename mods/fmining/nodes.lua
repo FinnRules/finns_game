@@ -205,6 +205,11 @@ minetest.register_node("fmining:uranium_ore", {
 --	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_craftitem("fmining:uranium_ingot", {
+	description = "Uranium Ingot",
+	inventory_image = "fmining_uranium_ingot.png",
+})
+
 minetest.register_node("fmining:lead_ore", {
 	description = "Lead Ore",
 	tiles = {"fmain_stone.png^fmining_lead_ore.png"},
