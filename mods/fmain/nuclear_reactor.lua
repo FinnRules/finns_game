@@ -417,16 +417,16 @@ minetest.register_node("fmain:nuclear_reactor_active", {
 	allow_metadata_inventory_move = allow_metadata_inventory_move,
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
---[[
+
 minetest.register_craft({
-	output = "fmain:furnace",
+	output = "fmain:nuclear_reactor",
 	recipe = {
-		{"group:stone", "group:stone", "group:stone"},
-		{"group:stone", "", "group:stone"},
-		{"group:stone", "group:stone", "group:stone"},
+		{"fmining:lead_ingot", "fmining:lead_ingot", "fmining:lead_ingot"},
+		{"fmining:lead_ingot", "fmining:uranium_ingot", "fmining:lead_ingot"},
+		{"fmining:lead_ingot", "fmining:lead_ingot", "fmining:lead_ingot"},
 	}
 })
-]]
+
 
 --recipes:
 fmain.register_nuclear_craft({
