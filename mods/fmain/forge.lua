@@ -465,30 +465,30 @@ end
 
 fmain.register_forge_craft({
 	recipe = "fmining:silver_ore",
-	cooktime = 30,
+	cooktime = 17,
 	output = "fmining:silver_ingot",
 })
 
 fmain.register_forge_craft({
 	recipe = "fmining:gold_ore",
-	cooktime = 30,
+	cooktime = 17,
 	output = "fmining:gold_ingot",
 })
 
 fmain.register_forge_craft({
 	recipe = "fmining:tungsten_ore",
-	cooktime = 120,
+	cooktime = 100,
 	output = "fmining:tungsten_ingot",
 })
 
 fmain.register_forge_craft({
 	recipe = "fmining:iron_ore",
-	cooktime = 100,
+	cooktime = 60,
 	output = "fmining:iron_ingot",
 })
 
 --fuel
 fmain.register_forge_fuel({
 	recipe = "fmain:fluxed_coal_powder",
-	burntime = 25,
+	burntime = 30,
 })

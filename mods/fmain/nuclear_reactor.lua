@@ -431,25 +431,25 @@ minetest.register_craft({
 --recipes:
 fmain.register_nuclear_craft({
 	recipe = "fmain:cobble",
-	cooktime = 3,
+	cooktime = 1,
 	output = "fmain:stone",
 })
 
 fmain.register_nuclear_craft({
 	recipe = "fmining:lead_ore",
-	cooktime = 3,
+	cooktime = 2,
 	output = "fmining:lead_ingot",
 })
 
 fmain.register_nuclear_craft({
 	recipe = "fmining:copper_ore",
-	cooktime = 3,
+	cooktime = 2,
 	output = "fmining:copper_ingot",
 })
 
 fmain.register_nuclear_craft({
 	recipe = "fmining:tin_ore",
-	cooktime = 3,
+	cooktime = 2,
 	output = "fmining:tin_ingot",
 })
 
@@ -461,13 +461,13 @@ fmain.register_nuclear_craft({
 
 fmain.register_nuclear_craft({
 	recipe = "fmining:silver_ore",
-	cooktime = 10,
+	cooktime = 5,
 	output = "fmining:silver_ingot",
 })
 
 fmain.register_nuclear_craft({
 	recipe = "fmining:gold_ore",
-	cooktime = 10,
+	cooktime = 5,
 	output = "fmining:gold_ingot",
 })
 

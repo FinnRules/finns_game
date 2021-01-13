@@ -243,12 +243,17 @@ minetest.register_node("fmining:lapis_block", {
 	groups = {cracky = 3},
 })
 
+minetest.register_node("fmining:polished_lapis_block", {
+	description = "Polished Lapis Lazuli Block",
+	tiles = {"fmining_polished_lapis_block.png"},
+	groups = {cracky = 3},
+})
+
 minetest.register_craft({
-	output = "fmining:lapis_block",
+	output = "fmining:polished_lapis_block 4",
 	recipe = {
-		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
-		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
-		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
+		{"fmining:lapis_block", "fmining:lapis_block"},
+		{"fmining:lapis_block", "fmining:lapis_block"},
 	}
 })
 

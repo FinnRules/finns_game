@@ -442,61 +442,61 @@ fmain.register_geothermal_craft({
 
 fmain.register_geothermal_craft({
 	recipe = "fmain:cobble",
-	cooktime = 5,
+	cooktime = 4,
 	output = "fmain:stone",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:lead_ore",
-	cooktime = 5,
+	cooktime = 4,
 	output = "fmining:lead_ingot",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:copper_ore",
-	cooktime = 6,
+	cooktime = 5,
 	output = "fmining:copper_ingot",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:tin_ore",
-	cooktime = 5,
+	cooktime = 4,
 	output = "fmining:tin_ingot",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:silver_ore",
-	cooktime = 20,
+	cooktime = 10,
 	output = "fmining:silver_ingot",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:gold_ore",
-	cooktime = 20,
+	cooktime = 10,
 	output = "fmining:gold_ingot",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:uranium_ore",
-	cooktime = 20,
+	cooktime = 15,
 	output = "fmining:uranium_ingot",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:tungsten_ore",
-	cooktime = 80,
+	cooktime = 60,
 	output = "fmining:tungsten_ingot",
 })
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:thorium_ore",
-	cooktime = 25,
+	cooktime = 17,
 	output = "fmining:thorium_ingot",
 })
 
 --Fuel
 fmain.register_geothermal_fuel({
 	recipe = "fbucket:bucket_lava",
-	burntime = 150,
+	burntime = 250,
 	bucket = "fbucket:bucket_empty",
 })

@@ -429,7 +429,7 @@ minetest.register_craft({
 
 fmain.register_coal_craft({
 	recipe = "fmining:iron_ore",
-	cooktime = 60,
+	cooktime = 45,
 	output = "fmining:iron_ingot",
 })
 
@@ -471,5 +471,5 @@ fmain.register_coal_craft({
 --fuels
 fmain.register_coal_fuel({
 	recipe = "fmining:coal",
-	burntime = 30,
+	burntime = 40,
 })
