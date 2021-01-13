@@ -473,7 +473,7 @@ fmain.register_nuclear_craft({
 
 fmain.register_nuclear_craft({
 	recipe = "fmining:tungsten_ore",
-	cooktime = 60,
+	cooktime = 40,
 	output = "fmining:tungsten_ingot",
 })
 

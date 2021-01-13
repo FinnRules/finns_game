@@ -10,16 +10,16 @@ fcarts:register_rail("fcarts:rail", {
 	wield_image = "fcarts_rail_straight.png",
 	groups = fcarts:get_rail_groups(),
 }, {})
---[[
+
 minetest.register_craft({
 	output = "fcarts:rail 18",
 	recipe = {
-		{"default:steel_ingot", "group:wood", "default:steel_ingot"},
-		{"default:steel_ingot", "", "default:steel_ingot"},
-		{"default:steel_ingot", "group:wood", "default:steel_ingot"},
+		{"group:iron_ingot", "group:stick", "group:iron_ingot"},
+		{"group:iron_ingot", "", "group:iron_ingot"},
+		{"group:iron_ingot", "group:stick", "group:iron_ingot"},
 	}
 })
-]]
+
 minetest.register_alias("default:rail", "fcarts:rail")
 
 
@@ -31,16 +31,16 @@ fcarts:register_rail("fcarts:powerrail", {
 	},
 	groups = fcarts:get_rail_groups(),
 }, {acceleration = 5})
---[[
+
 minetest.register_craft({
 	output = "fcarts:powerrail 18",
 	recipe = {
-		{"default:steel_ingot", "group:wood", "default:steel_ingot"},
-		{"default:steel_ingot", "default:mese_crystal", "default:steel_ingot"},
-		{"default:steel_ingot", "group:wood", "default:steel_ingot"},
+		{"group:iron_ingot", "group:stick", "group:iron_ingot"},
+		{"group:iron_ingot", "fmining:gold_ingot", "group:iron_ingot"},
+		{"group:iron_ingot", "group:stick", "group:iron_ingot"},
 	}
 })
-]]
+
 
 fcarts:register_rail("fcarts:brakerail", {
 	description = "Brake Rail",
@@ -50,13 +50,12 @@ fcarts:register_rail("fcarts:brakerail", {
 	},
 	groups = fcarts:get_rail_groups(),
 }, {acceleration = -3})
---[[
+
 minetest.register_craft({
 	output = "fcarts:brakerail 18",
 	recipe = {
-		{"default:steel_ingot", "group:wood", "default:steel_ingot"},
-		{"default:steel_ingot", "default:coal_lump", "default:steel_ingot"},
-		{"default:steel_ingot", "group:wood", "default:steel_ingot"},
+		{"group:iron_ingot", "group:stick", "group:iron_ingot"},
+		{"group:iron_ingot", "fmining:lead_ingot", "group:iron_ingot"},
+		{"group:iron_ingot", "group:stick", "group:iron_ingot"},
 	}
 })
-]]

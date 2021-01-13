@@ -78,89 +78,18 @@ minetest.register_craft({
 			{"", "group:stick", ""}
 		}
 })
-	
---[[	
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:coal_ore",
-	recipe = "fmining:coal",
-})
 
 minetest.register_craft({
-	type = "cooking",
-	output = "fmining:iron_ore",
-	recipe = "fmining:iron_ingot",
+		output = "fmining:tungsten_pic",
+		recipe = {
+			{"fmining:tungsten_carbide_ingot", "fmining:tungsten_carbide_ingot", "fmining:tungsten_carbide_ingot"},
+			{"", "group:stick", ""},
+			{"", "group:stick", ""}
+		}
 })
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:copper_ore",
-	recipe = "fmining:copper_ingot",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:silver_ore",
-	recipe = "fmining:silver_ingot",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:gold_ore",
-	recipe = "fmining:gold_ingot",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:sapphire_ore",
-	recipe = "fmining:sapphire",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:emerald_ore",
-	recipe = "fmining:emerald",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:ruby_ore",
-	recipe = "fmining:ruby",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:lapis_ore",
-	recipe = "fmining:lapis",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:tungsten_ore",
-	recipe = "fmining:tungsten_ingot",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:opal_ore",
-	recipe = "fmining:opal",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "fmining:tin_ore",
-	recipe = "fmining:tin_ingot",
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "fmining:coal",
-	burntime = 38,
-})
-]]
 
 minetest.register_craft({
 	type = "shapeless",
-	recipe = {"fmining:tin_ingot", "fmining:copper_ingot"},
-	output = "fmining:bronze_ingot 2"
+	recipe = {"fmining:tin_ingot", "fmining:copper_ingot", "fmining:copper_ingot"},
+	output = "fmining:bronze_ingot 3"
 })

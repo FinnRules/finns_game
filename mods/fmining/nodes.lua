@@ -147,6 +147,17 @@ minetest.register_craftitem("fmining:tungsten_ingot",{
 	inventory_image = "fmining_tungsten_ingot.png",	
 })
 
+minetest.register_craftitem("fmining:tungsten_carbide_ingot",{
+	description = "Tungsten Carbide Ingot",
+	inventory_image = "fmining_tungsten_carbide_ingot.png",	
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	recipe = {"fmain:flint", "fmining:tungsten_ingot"},
+	output = "fmining:tungsten_carbide_ingot",
+})
+
 minetest.register_node("fmining:opal_ore", {
 	description = "Opal Ore",
 	tiles = {"fmain_stone.png^fmining_opal_ore.png"},
@@ -219,4 +230,25 @@ minetest.register_node("fmining:thorium_ore", {
 minetest.register_craftitem("fmining:thorium_ingot", {
 	description = "Thorium Ingot",
 	inventory_image = "fmining_thorium_ingot.png",
+})
+
+minetest.register_node("fmining:lapis_block", {
+	description = "Lapis Lazuli Block",
+	tiles = {"fmining_lapis_block.png"},
+	groups = {cracky = 3},
+})
+
+minetest.register_craft({
+	output = "fmining:lapis_block",
+	recipe = {
+		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
+		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
+		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
+	}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	recipe = {"fmining:lapis_block"},
+	output = "fmining:lapis 9"
 })

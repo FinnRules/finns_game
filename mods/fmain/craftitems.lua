@@ -24,3 +24,8 @@ minetest.register_craftitem("fmain:charcoal", {
 	description = "Charcoal",
 	inventory_image = "fmining_coal.png",
 })
+
+minetest.register_craftitem("fmain:flint", {
+	description = "Flint",
+	inventory_image = "fmain_flint.png",
+})

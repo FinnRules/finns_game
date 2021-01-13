@@ -477,7 +477,7 @@ fmain.register_forge_craft({
 
 fmain.register_forge_craft({
 	recipe = "fmining:tungsten_ore",
-	cooktime = 180,
+	cooktime = 120,
 	output = "fmining:tungsten_ingot",
 })
 

@@ -421,12 +421,11 @@ minetest.register_craftitem("fcarts:cart", {
 		return itemstack
 	end,
 })
---[[
+
 minetest.register_craft({
 	output = "fcarts:cart",
 	recipe = {
-		{"default:steel_ingot", "", "default:steel_ingot"},
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
+		{"group:iron_ingot", "", "group:iron_ingot"},
+		{"group:iron_ingot", "group:iron_ingot", "group:iron_ingot"},
 	},
 })
-]]

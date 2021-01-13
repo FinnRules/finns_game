@@ -422,16 +422,16 @@ minetest.register_node("fmain:geothermal_furnace_active", {
 	allow_metadata_inventory_move = allow_metadata_inventory_move,
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
---[[
+
 minetest.register_craft({
-	output = "fmain:furnace",
+	output = "fmain:geothermal_furnace",
 	recipe = {
-		{"group:stone", "group:stone", "group:stone"},
-		{"group:stone", "", "group:stone"},
-		{"group:stone", "group:stone", "group:stone"},
+		{"fmining:tungsten_ingot", "fmining:tungsten_ingot", "fmining:tungsten_ingot"},
+		{"fmining:tungsten_ingot", "", "fmining:tungsten_ingot"},
+		{"fmining:tungsten_ingot", "fmining:tungsten_ingot", "fmining:tungsten_ingot"},
 	}
 })
-]]
+
 
 --Recipes
 fmain.register_geothermal_craft({
@@ -484,7 +484,7 @@ fmain.register_geothermal_craft({
 
 fmain.register_geothermal_craft({
 	recipe = "fmining:tungsten_ore",
-	cooktime = 120,
+	cooktime = 80,
 	output = "fmining:tungsten_ingot",
 })
 

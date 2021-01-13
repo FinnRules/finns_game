@@ -220,7 +220,7 @@ minetest.register_node("fmain:gravel", {
 	drop = {
 		max_items = 1,
 		items = {
---			{items = {"default:flint"}, rarity = 16}, fix me when flint is added
+			{items = {"fmain:flint"}, rarity = 10},
 			{items = {"fmain:gravel"}}
 		}
 	}

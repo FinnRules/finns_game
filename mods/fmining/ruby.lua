@@ -12,7 +12,7 @@ minetest.register_tool("fmining:ruby_pic", {
 		full_punch_interval = 0.9,
 		max_drop_level=3,
 		groupcaps={
-			cracky = {times={[1]=2.0, [2]=1.0, [3]=0.50}, uses=30, maxlevel=3},
+			cracky = {times={[1]=0.8, [2]=1.5, [3]=2.5, [4]=4.0}, uses=150},
 		},
 		damage_groups = {fleshy=5},
 	},
