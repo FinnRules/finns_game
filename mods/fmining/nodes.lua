@@ -70,6 +70,11 @@ minetest.register_craftitem("fmining:silver_ingot",{
 	inventory_image = "fmining_silver_ingot.png",	
 })
 
+minetest.register_craftitem("fmining:silver_nugget",{
+	description = "Silver Nugget",
+	inventory_image = "fmining_silver_nugget.png",	
+})
+
 minetest.register_node("fmining:gold_ore", {
 	description = "Gold Ore",
 	tiles = {"fmain_stone.png^fmining_gold_ore.png"},
@@ -81,6 +86,11 @@ minetest.register_node("fmining:gold_ore", {
 minetest.register_craftitem("fmining:gold_ingot", {
 	description = "Gold Ingot",
 	inventory_image = "fmining_gold_ingot.png"
+})
+
+minetest.register_craftitem("fmining:gold_nugget", {
+	description = "Gold Nugget",
+	inventory_image = "fmining_gold_nugget.png"
 })
 
 minetest.register_node("fmining:sapphire_ore", {

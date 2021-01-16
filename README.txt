@@ -1,4 +1,4 @@
-Finn's Game (Version 0.4.9)
+Finn's Game (Version 0.4.10)
 
 This game is a work in progress! Not all code nor all images contain sound licenses. All code is free software under some license. All code by Emetchi can be assumed to be under GPL but this is not a release.
 

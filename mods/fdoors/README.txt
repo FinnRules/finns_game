@@ -91,3 +91,27 @@ New textures in fdoors:
 
 Emetchi CC-BY-SA 3.0
 fdoors_maple_door.png
+
+Milcerine CC-BY-SA 3.0
+fdoors_cherry_door.png
+fdoors_cherry_trapdoor.png
+fdoors_cherry_trapdoor_side.png
+fdoors_item_cherry.png
+fdoors_item_maple.png
+fdoors_item_poplar.png
+fdoors_item_redwood.png
+fdoors_item_weeping_willow.png
+fdoors_item_white_oak.png
+fdoors_redwood_door.png
+fdoors_redwood_trapdoor.png
+fdoors_redwood_trapdoor_side.png
+fdoors_weeping_willow_door.png
+fdoors_weeping_willow_trapdoor.png
+fdoors_weeping_willow_trapdoor_side.png
+fdoors_white_oak_trapdoor.png
+fdoors_white_oak_trapdoor_side.png
+
+Milcerine from Emetchi CC-BY-SA 3.0
+fdoors_maple_trapdoor.png
+fdoors_maple_trapdoor_side.png
+fdoors_white_oak_door.png

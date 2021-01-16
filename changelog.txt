@@ -1,0 +1,10 @@
+Finn's Game changelog
+
+0.4.10: "The Dying Update":
+	+Changelog introduced
+	+distresssignal mod introduced, item added
+	+bones parted to Finn's Game
+	+Overhaul to image licensing for fmain, overproduced, fmining and others
+	+Added Au and Ag nuggets to fmining	
+	+Redesigned title screen
+	-Removed some unused textures

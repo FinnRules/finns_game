@@ -7,5 +7,13 @@ This mod features only hoes and soil. Soil is defined in fmain, so redefinition 
 Code by Emetchi LGPLv3
 
 Textures:
-Emetchi CC-BY-SA
-(all not mentioned)
+Milcerine CC-BY-SA 3.0:
+ffarming_bronze_hoe.png
+ffarming_diamond_hoe.png
+ffarming_iron_hoe.png
+ffarming_tungsten_hoe.png
+
+PilzAdam (CC-BY 3.0):
+ffarming_soil.png
+ffarming_soil_wet.png
+ffarming_soil_wet_side.png

@@ -8,6 +8,7 @@ Emetchi CC-BY-SA 3.0
 fmusic_blank_vinyl.png
 fmusic_dreamy.png
 fmusic_billiard_room.png
+fmusic_drive.png
 
 Sounds:
 

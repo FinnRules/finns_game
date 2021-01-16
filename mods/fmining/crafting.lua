@@ -93,3 +93,33 @@ minetest.register_craft({
 	recipe = {"fmining:tin_ingot", "fmining:copper_ingot", "fmining:copper_ingot"},
 	output = "fmining:bronze_ingot 3"
 })
+
+minetest.register_craft({
+	type = "shapeless",
+	recipe = {"fmining:silver_ingot"},
+	output = "fmining:silver_nugget 9"
+})
+
+minetest.register_craft({
+		output = "fmining:silver_ingot",
+		recipe = {
+			{"fmining:silver_nugget", "fmining:silver_nugget", "fmining:silver_nugget"},
+			{"fmining:silver_nugget", "fmining:silver_nugget", "fmining:silver_nugget"},
+			{"fmining:silver_nugget", "fmining:silver_nugget", "fmining:silver_nugget"}
+		}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	recipe = {"fmining:gold_ingot"},
+	output = "fmining:gold_nugget 9"
+})
+
+minetest.register_craft({
+		output = "fmining:gold_ingot",
+		recipe = {
+			{"fmining:gold_nugget", "fmining:gold_nugget", "fmining:gold_nugget"},
+			{"fmining:gold_nugget", "fmining:gold_nugget", "fmining:gold_nugget"},
+			{"fmining:gold_nugget", "fmining:gold_nugget", "fmining:gold_nugget"}
+		}
+})
