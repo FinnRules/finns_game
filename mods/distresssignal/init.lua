@@ -88,7 +88,7 @@ local function findSpaceFromMiddle(user)
 --			local idx3, idx4 = a:index(pos.x, 201 - i, pos.z), a:index(pos.x, 202 - i, pos.z) --Checks to make sure that the player is not going to be forced to spawn inside solid ground
 --			if idx3 == CID_air and idx4 == CID_air then
 			user:set_pos({x = pos.x, y = 201 - i, z = pos.z})
-			return
+			return true
 		end
 		else
 			--Send message to user
@@ -103,11 +103,10 @@ minetest.register_craftitem("distresssignal:signal", {
 	description = "Distress Signal",
 	inventory_image = "distresssignal_signal.png",
 	on_use = function(itemstack, user)
-		findSpaceFromMiddle(user)
-
-		itemstack:take_item()
-		return itemstack
-		
+		if findSpaceFromMiddle(user) then
+			itemstack:take_item()
+			return itemstack
+		end
 		
 	end
 })

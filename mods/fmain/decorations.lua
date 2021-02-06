@@ -1,3 +1,4 @@
+--[[
 minetest.register_node("fmain:nemophila", {
 	description = "Nemophila",
 	drawtype = "plantlike",
@@ -15,14 +16,6 @@ minetest.register_node("fmain:nemophila", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:bleeding_heart", {
@@ -42,14 +35,6 @@ minetest.register_node("fmain:bleeding_heart", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:short_grass", {
@@ -70,14 +55,6 @@ minetest.register_node("fmain:short_grass", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_decoration({
@@ -110,14 +87,6 @@ minetest.register_node("fmain:redwood_short_grass", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_decoration({
@@ -149,14 +118,6 @@ minetest.register_node("fmain:bells_of_ireland", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:snowdrop", {
@@ -176,14 +137,6 @@ minetest.register_node("fmain:snowdrop", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:dahlia", {
@@ -203,14 +156,6 @@ minetest.register_node("fmain:dahlia", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:rose", {
@@ -230,14 +175,6 @@ minetest.register_node("fmain:rose", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:hellebore", {
@@ -257,14 +194,6 @@ minetest.register_node("fmain:hellebore", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:purple_orchid", {
@@ -284,14 +213,6 @@ minetest.register_node("fmain:purple_orchid", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
 
 minetest.register_node("fmain:red_hot_poker", {
@@ -311,18 +232,29 @@ minetest.register_node("fmain:red_hot_poker", {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
 	},
---[[
-	on_place = function(itemstack, placer, pointed_thing)
-		-- place a random grass node
-		local stack = ItemStack("default:grass_" .. math.random(1,5))
-		local ret = minetest.item_place(stack, placer, pointed_thing)
-		return ItemStack("default:grass_1 " ..
-			itemstack:get_count() - (1 - ret:get_count()))
-	end,]]
 })
-
+]]
 --Very dirty flower spawn code for test versions
-local flowerList = {"nemophila", "bleeding_heart", "bells_of_ireland", "snowdrop", "dahlia", "rose", "hellbore", "purple_orchid", "red_hot_poker"}
+local flowerList = {"nemophila", "bleeding_heart", "bells_of_ireland", "snowdrop", "dahlia", "rose", "hellebore", "purple_orchid", "red_hot_poker"}
+for i in pairs(flowerList) do
+	minetest.register_node("fmain:" .. flowerList[i], {
+		description = string.gsub(" " .. flowerList[i]:gsub("_", " "):gsub("^%l", string.upper), "%W%l", string.upper):sub(2),
+		drawtype = "plantlike",
+		waving = 1,
+		tiles = {"fmain_flower_" .. flowerList[i] .. ".png"},
+		inventory_image = "fmain_flower_" .. flowerList[i] .. ".png",
+	--	wield_image = "fmain_flower_nemophila.png",
+		paramtype = "light",
+		sunlight_propagates = true,
+		walkable = false,
+		groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1, flammable = 1},
+	--	sounds = default.node_sound_leaves_defaults(),
+		selection_box = {
+			type = "fixed",
+			fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
+		},
+	})
+end
 
 for i in pairs(flowerList) do
 	minetest.register_decoration({

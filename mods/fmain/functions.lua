@@ -498,7 +498,7 @@ fmain.after_place_leaves = function(pos, placer, itemstack, pointed_thing)
 end
 
 -- Leafdecay
-local function leafdecay_after_destruct(pos, oldnode, def)
+function fmain.leafdecay_after_destruct(pos, oldnode, def)
 	for _, v in pairs(minetest.find_nodes_in_area(vector.subtract(pos, def.radius),
 			vector.add(pos, def.radius), def.leaves)) do
 		local node = minetest.get_node(v)
@@ -508,11 +508,13 @@ local function leafdecay_after_destruct(pos, oldnode, def)
 		end
 	end
 end
-
+--[[
 local movement_gravity = tonumber(
 	minetest.settings:get("movement_gravity")) or 9.81
+]]
+function fmain.leafdecay_on_timer(pos, def)
+	local movement_gravity = tonumber(minetest.settings:get("movement_gravity")) or 9.81
 
-local function leafdecay_on_timer(pos, def)
 	if minetest.find_node_near(pos, def.radius, def.trunks) then
 		return false
 	end
@@ -562,14 +564,14 @@ function fmain.register_leafdecay(def)
 	for _, v in pairs(def.trunks) do
 		minetest.override_item(v, {
 			after_destruct = function(pos, oldnode)
-				leafdecay_after_destruct(pos, oldnode, def)
+				fmain.leafdecay_after_destruct(pos, oldnode, def)
 			end,
 		})
 	end
 	for _, v in pairs(def.leaves) do
 		minetest.override_item(v, {
 			on_timer = function(pos)
-				leafdecay_on_timer(pos, def)
+				fmain.leafdecay_on_timer(pos, def)
 			end,
 		})
 	end

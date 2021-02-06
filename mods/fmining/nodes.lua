@@ -207,6 +207,22 @@ minetest.register_craftitem("fmining:diamond", {
 	inventory_image = "fmining_diamond.png",
 })
 
+minetest.register_node("fmining:violettam_ore", {
+	description = "Violettam Ore",
+	tiles = {"fmain_bluestone.png^fmining_violettam_ore.png"},
+	groups = {cracky = 5, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("fmining:gingrium_ore", {
+	description = "Gingrium Ore",
+	tiles = {"fmain_bluestone.png^fmining_gingrium_ore.png"},
+	groups = {cracky = 5, ore = 1},
+--	drop = "default:coal_lump",
+--	sounds = default.node_sound_stone_defaults(),
+})
+
 minetest.register_node("fmining:uranium_ore", {
 	description = "Uranium Ore",
 	tiles = {"fmain_stone.png^fmining_uranium_ore.png"},
@@ -257,6 +273,15 @@ minetest.register_node("fmining:polished_lapis_block", {
 	description = "Polished Lapis Lazuli Block",
 	tiles = {"fmining_polished_lapis_block.png"},
 	groups = {cracky = 3},
+})
+
+minetest.register_craft({
+	output = "fmining:lapis_block",
+	recipe = {
+		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
+		{"fmining:lapis", "fmining:lapis", "fmining:lapis"},
+		{"fmining:lapis", "fmining:lapis", "fmining:lapis"}
+	}
 })
 
 minetest.register_craft({

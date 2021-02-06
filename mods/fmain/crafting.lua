@@ -317,3 +317,28 @@ minetest.register_craft({
 			{"fmain:limestone_chunk", "fmain:limestone_chunk"},
 	}
 })
+
+--Sandstone
+minetest.register_craft({
+		output = "fmain:sandstone",
+		recipe = {
+			{"fmain:sand", "fmain:sand"},
+			{"fmain:sand", "fmain:sand"}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:white_sandstone",
+		recipe = {
+			{"fmain:white_sand", "fmain:white_sand"},
+			{"fmain:white_sand", "fmain:white_sand"}
+	}
+})
+
+minetest.register_craft({
+		output = "fmain:black_sandstone",
+		recipe = {
+			{"fmain:black_sand", "fmain:black_sand"},
+			{"fmain:black_sand", "fmain:black_sand"}
+	}
+})

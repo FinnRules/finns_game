@@ -1,0 +1,1 @@
+All tree schematics have the bottom layer duplicated lest it be cut off in mapgen/to accomidate saplings.

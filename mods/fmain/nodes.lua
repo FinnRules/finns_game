@@ -7,6 +7,26 @@ minetest.register_node("fmain:stone", {
 	drop = "fmain:cobble",
 })
 
+minetest.register_node("fmain:bluestone", {
+	description = "Bluestone",
+	tiles = {"fmain_bluestone.png"},
+	groups = {cracky = 1, stone = 1},
+	drop = "fmain:bluestone_cobble",
+})
+
+minetest.register_node("fmain:bluestone_cobble", {
+	description = "Bluestone Cobble",
+	tiles = {"fmain_bluestone_cobble.png"},
+	is_ground_content = false,
+	groups = {cracky = 1, stone = 2, cobble = 1},
+})
+
+minetest.register_node("fmain:stone_brick", {
+	description = "Stone_brick",
+	tiles = {"fmain_stone_brick.png"},
+	groups = {cracky = 1},
+})
+
 minetest.register_node("fmain:mossy_stone", {
 	description = "Mossy Stone",
 	tiles = {
@@ -26,6 +46,36 @@ minetest.register_node("fmain:cobble", {
 	tiles = {"fmain_cobble.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, stone = 2, cobble = 1},
+})
+
+minetest.register_node("fmain:marble", {
+	description = "Marble",
+	tiles = {"fmain_marble.png"},
+	groups = {cracky = 1},
+})
+
+minetest.register_node("fmain:polished_marble", {
+	description = "Polished Marble",
+	tiles = {"fmain_polished_marble.png"},
+	groups = {cracky = 1},
+})
+
+minetest.register_node("fmain:marble_brick", {
+	description = "Marble Brick",
+	tiles = {"fmain_marble_brick.png"},
+	groups = {cracky = 1},
+})
+
+minetest.register_node("fmain:slate", {
+	description = "Slate",
+	tiles = {"fmain_slate.png"},
+	groups = {cracky = 1},
+})
+
+minetest.register_node("fmain:slate_shingles", {
+	description = "Slate Shingles",
+	tiles = {"fmain_slate_shingles.png"},
+	groups = {cracky = 1},
 })
 --[[
 minetest.register_node("fmain:bluestone_cobble", {
@@ -133,7 +183,7 @@ minetest.register_node("fmain:water_source", {
 	buildable_to = true,
 	is_ground_content = false,
 	drop = "",
-	drowning = 1,
+	drowning = 1
 	liquidtype = "source",
 	liquid_alternative_flowing = "fmain:water_flowing",
 	liquid_alternative_source = "fmain:water_source",
@@ -356,5 +406,50 @@ minetest.register_node("fmain:glass", {
 	is_ground_content = false,
 	groups = {cracky = 1, oddly_breakable_by_hand = 2},
 --	sounds = default.node_sound_glass_defaults(),
+})
+
+--Snow
+minetest.register_node("fmain:dirt_with_snow", {
+	description = "Dirt with Snow",
+	tiles = {"fmain_snow.png", "fmain_dirt.png",
+		{name = "fmain_dirt.png^fmain_snow_side.png",
+			tileable_vertical = false}},
+	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1, snowy = 1},
+	drop = "fmain:dirt",
+--	sounds = default.node_sound_dirt_defaults({
+--		footstep = {name = "default_snow_footstep", gain = 0.2},
+--	}),
+})
+
+minetest.register_node("fmain:snow", {
+	description = "Snow",
+	tiles = {"fmain_snow.png"},
+	inventory_image = "fmain_snowball.png",
+	wield_image = "fmain_snowball.png",
+	paramtype = "light",
+	buildable_to = true,
+	floodable = true,
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
+		},
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, -6 / 16, 0.5},
+		},
+	},
+	groups = {crumbly = 3, falling_node = 1, snowy = 1},
+--	sounds = default.node_sound_snow_defaults(),
+
+	on_construct = function(pos)
+		pos.y = pos.y - 1
+		if minetest.get_node(pos).name == "fmain:dirt_with_grass" then
+			minetest.set_node(pos, {name = "fmain:dirt_with_snow"})
+		end
+	end,
 })
 

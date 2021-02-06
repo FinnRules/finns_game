@@ -8,7 +8,11 @@ Emetchi (CC-BY-SA 3.0)
 	fmain_maple_fence.png
 	fmain_maple_planks.png
 	fmain_maple_sapling.png
+	fmain_maple_sapling_green.png
 	fmain_obsidian.png
+	fmain_pine_wood_bark.png
+	fmain_pine_wood_core.png
+	fmain_pine_needles.png
 	fmain_redwood_bark.png
 	fmain_redwood_core.png
 	fmain_redwood_fence.png
@@ -35,6 +39,8 @@ Emetchi from celeron55 (CC-BY-SA 3.0)
 	fmain_coal_furnace_fire_bg.png
 	fmain_coal_furnace_fire_fg.png
 
+Emetchi from RobinxFox (CC-BY-SA 3.0)
+	fmain_stone_brick.png
 
 Milcerine (CC-BY-SA 3.0)
 	fmain_baked_clay.png
@@ -134,6 +140,8 @@ RobinFox (CC-BY-SA 3.0)
 	fmain_geothermal_furnace_top.png
 	fmain_limestone.png
 	fmain_limestone_chunk.png
+	fmain_marble.png
+	fmain_marble_brick.png
 	fmain_nuclear_reactor_bottom.png
 	fmain_nuclear_reactor_front.png
 	fmain_nuclear_reactor_front_active.png
@@ -144,11 +152,13 @@ RobinFox (CC-BY-SA 3.0)
 	fmain_oven_front_active.png
 	fmain_oven_side.png
 	fmain_oven_top.png
+	fmain_polished_marble.png
 	fmain_poplar_bark.png
 	fmain_poplar_core.png
 	fmain_poplar_leaves.png
 	fmain_poplar_planks.png
 	fmain_sand.png
+	fmain_slate.png
 	fmain_stone.png
 	fmain_wood_stove_front.png
 	fmain_wood_stove_front_active.png

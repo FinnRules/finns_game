@@ -484,6 +484,11 @@ for i in pairs(fmain.wood) do
 	})
 end
 
+fmain.register_stove_fuel({
+	recipe = "fmain:stick",
+	burntime = 3,
+})
+
 local leaves = {"maple_leaves", "maple_leaves_green", "redwood_leaves", "poplar_leaves", "cherry_blossoms", "cherry_white_blossoms", "weeping_willow_leaves", "white_oak_leaves"}
 
 for i in pairs(leaves) do

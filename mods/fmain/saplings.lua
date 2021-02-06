@@ -30,6 +30,9 @@ function fmain.grow_sapling(pos)
 	elseif node.name == "fmain:white_oak_sapling" then
 		minetest.log("action", "A sapling grows into a tree at " .. minetest.pos_to_string(pos))
 		fmain.grow_white_oak_tree(pos)
+	elseif node.name == "fmain:maple_sapling_green" then
+			minetest.log("action", "A sapling grows into a tree at " .. minetest.pos_to_string(pos))
+			fmain.grow_maple_tree_green(pos)
 	end
 	--[[
 	if node.name == "fmain:sapling" then
@@ -211,6 +214,47 @@ function fmain.grow_maple_tree(pos)
 	minetest.place_schematic(spos, fmain.path .. "/schematics/maple_tree.mts", "random", nil, false)
 end
 
+minetest.register_node("fmain:maple_sapling_green", {
+	description = "Green Maple Tree Sapling",
+	drawtype = "plantlike",
+	tiles = {"fmain_maple_sapling_green.png"},
+	inventory_image = "fmain_maple_sapling_green.png",
+	wield_image = "fmain_maple_sapling_green.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	on_timer = fmain.grow_sapling,
+	selection_box = {
+		type = "fixed",
+		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+		attached_node = 1, sapling = 1},
+--	sounds = default.node_sound_leaves_defaults(),
+
+	on_construct = function(pos)
+		minetest.get_node_timer(pos):start(math.random(300, 1500)) --300, 1500
+	end,
+
+	on_place = function(itemstack, placer, pointed_thing)
+		itemstack = fmain.sapling_on_place(itemstack, placer, pointed_thing,
+			"fmain:maple_sapling_green",
+			-- minp, maxp to be checked, relative to sapling pos
+			-- minp_relative.y = 1 because sapling pos has been checked
+			{x = -3, y = 1, z = -3},
+			{x = 3, y = 6, z = 3},
+			-- maximum interval of interior volume check
+			4)
+
+		return itemstack
+	end,
+})
+
+function fmain.grow_maple_tree_green(pos)
+	spos = {x = pos.x - 3, y = pos.y - 1, z = pos.z - 3}
+	minetest.set_node(pos, {name = "air"})
+	minetest.place_schematic(spos, fmain.path .. "/schematics/maple_tree_green.mts", "random", nil, false)
+end
 
 
 
@@ -251,9 +295,9 @@ minetest.register_node("fmain:white_oak_sapling", {
 })
 
 function fmain.grow_white_oak_tree(pos)
-	spos = {x = pos.x - 8, y = pos.y, z = pos.z - 6}
+	spos = {x = pos.x - 8, y = pos.y - 1, z = pos.z - 6}
 	minetest.set_node(pos, {name = "air"})
-	minetest.place_schematic(spos, fmain.path .. "/schematics/white_oak_1.mts", "random", nil, false)
+	minetest.place_schematic(spos, fmain.path .. "/schematics/white_oak_tree.mts", "random", nil, false)
 end
 
 --[[

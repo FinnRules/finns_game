@@ -1,9 +1,25 @@
 Finn's Game changelog
 
+0.5.0: "Big Boy Biomes Pt 1":
+	=Final version for a little while while I take a break
+	+New Biomes:
+		+snowy_forest
+		+orange_grove
+	+Added Snow and related
+	+Added Marble and Slate to fmain
+	+Updated README
+	+Crafting recipes for sandstones
+	+Stick cooking added for Wood Stove
+	=Hellebore spawning fixed
+	=Distress Signal no longer should take item after not working
+	=Fixed the glitch causing White Oak to spawn everywhere
+	=Revised and cleaned up schematics
+	=Revised leaf decay mechanics to allow for fruittrees mechanics
+
 0.4.10: "The Dying Update":
 	+Changelog introduced
 	+distresssignal mod introduced, item added
-	+bones parted to Finn's Game
+	+bones ported to Finn's Game
 	+Overhaul to image licensing for fmain, overproduced, fmining and others
 	+Added Au and Ag nuggets to fmining	
 	+Redesigned title screen

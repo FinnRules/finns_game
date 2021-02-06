@@ -5,7 +5,7 @@ minetest.register_tool("fmain:wood_axe", {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
 		groupcaps={
-			choppy={times={[1]=2.75, [2]=1.70, [3]=1.15}, uses=20},
+			choppy={times={[1]=2.1}, uses=2},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -21,7 +21,7 @@ minetest.register_tool("fmain:stone_axe", {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
 		groupcaps={
-			choppy={times={[1]=2.75, [2]=1.70, [3]=1.15}, uses=20},
+			choppy={times={[1]=1.75}, uses=8},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -36,7 +36,7 @@ minetest.register_tool("fmain:bronze_axe", {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
 		groupcaps={
-			choppy={times={[1]=2.75, [2]=1.70, [3]=1.15}, uses=20},
+			choppy={times={[1]=1.1}, uses=25},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -51,7 +51,7 @@ minetest.register_tool("fmain:iron_axe", {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
 		groupcaps={
-			choppy={times={[1]=2.75, [2]=1.70, [3]=1.15}, uses=20},
+			choppy={times={[1]=0.6}, uses=120},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -66,7 +66,7 @@ minetest.register_tool("fmain:diamond_axe", {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
 		groupcaps={
-			choppy={times={[1]=2.75, [2]=1.70, [3]=1.15}, uses=20},
+			choppy={times={[1]=0.5}, uses=215},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -81,7 +81,7 @@ minetest.register_tool("fmain:tungsten_axe", {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
 		groupcaps={
-			choppy={times={[1]=2.75, [2]=1.70, [3]=1.15}, uses=20},
+			choppy={times={[1]=0.1}, uses=600},
 		},
 		damage_groups = {fleshy=4},
 	},

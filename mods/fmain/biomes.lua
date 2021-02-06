@@ -19,6 +19,16 @@ minetest.register_alias("mapgen_gravel", "fmain:gravel")
 --Biomes
 
 minetest.register_biome({
+	name = "bluestone_cave",
+--	node_cave_liquid = {"fmain:water_source", "fmain:lava_source"},
+	node_stone = "fmain:bluestone",
+	y_max = -100,
+	y_min = -300,
+	heat_point = 50,
+	humidity_point = 50,
+})
+
+minetest.register_biome({
 	name = "cave_main",
 	node_cave_liquid = {"fmain:water_source", "fmain:lava_source"},
 	y_max = -300,
@@ -62,7 +72,7 @@ minetest.register_decoration({
     biomes = {"maple_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/maple_tree_adj.mts",
+    schematic = fmain.path .. "/schematics/maple_tree.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -112,53 +122,76 @@ minetest.register_biome({
 		heat_point = 60,
 		humidity_point = 45,
 })
---[[
-minetest.register_biome({
-		name = "rainforest",
-		node_top = "fmain:black_sand",
-		depth_top = 5,
-		node_filler = "fmain:black_sand",
-		depth_filler = 1,
-		node_stone = "fmain:black_sandstone",
-		node_riverbed = "fmain:black_sand",
-		depth_riverbed = 2,
-		y_max = 15,
-		y_min = 0,
-		heat_point = 80,
-		humidity_point = 45,
-})
-
 
 minetest.register_biome({
-		name = "tundra",
-		node_top = "fmain:snow",
-		depth_top = 5,
-		node_stone = "fmain:stone",
-		node_riverbed = "fmain:ice",
-		depth_riverbed = 2,
-		y_max = 30,
-		y_min = 0,
-		heat_point = 10,
-		humidity_point = 5,
+        name = "winter_forest",
+        node_dust = "fmain:snow",
+        node_top = "fmain:dirt_with_snow",
+        depth_top = 1,
+        node_filler = "fmain:dirt",
+        depth_filler = 4,
+        node_stone = "fmain:stone",
+        node_riverbed = "fmain:dirt",
+        depth_riverbed = 2,
+        y_max = 100,
+        y_min = 0,
+        heat_point = 10,
+        humidity_point = 26,
 })
---[[
-minetest.register_biome({
-		name = "glacier",
-		node_dust = "fmain:snow", --thin snow layer
-		node_top = "fmain:black_sand",
-		depth_top = 5,
-		node_filler = "fmain:black_sand",
-		depth_filler = 1,
-		node_stone = "fmain:black_sandstone",
-		node_riverbed = "fmain:black_sand",
-		depth_riverbed = 2,
-		y_max = 15,
-		y_min = 0,
-		heat_point = 80,
-		humidity_point = 45,
-})
-]]
 
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_snow"},
+    sidelen = 4,
+    fill_ratio = 0.004,
+    biomes = {"winter_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/pine_snowy_narrow.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_snow"},
+    sidelen = 4,
+    fill_ratio = 0.003,
+    biomes = {"winter_forest"},
+    y_max = 150,
+    y_min = 1,
+    schematic = fmain.path .. "/schematics/pine_snowy_wide.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
+
+minetest.register_biome({
+        name = "orange_grove",
+        node_top = "fmain:dirt_with_grass",
+        depth_top = 1,
+        node_filler = "fmain:dirt",
+        depth_filler = 4,
+        node_stone = "fmain:stone",
+        node_riverbed = "fmain:gravel",
+        depth_riverbed = 2,
+        y_max = 100,
+        y_min = 0,
+        heat_point = 80,
+        humidity_point = 70,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"fmain:dirt_with_grass"},
+    sidelen = 4,
+    fill_ratio = 0.005,
+    biomes = {"orange_grove"},
+    y_max = 100,
+    y_min = 0,
+    schematic = fmain.path .. "/schematics/orange_tree.mts",
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+})
 
 minetest.register_biome({
         name = "redwood_forest",
@@ -182,7 +215,7 @@ minetest.register_decoration({
     biomes = {"redwood_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/redwood_tree_adj.mts",
+    schematic = fmain.path .. "/schematics/redwood_tree.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
     
@@ -212,7 +245,7 @@ minetest.register_decoration({
     biomes = {"cherry_blossom_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/cherry_tree_adj.mts",
+    schematic = fmain.path .. "/schematics/cherry_tree.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -225,7 +258,7 @@ minetest.register_decoration({
     biomes = {"cherry_blossom_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/cherry_tree_white_adj.mts",
+    schematic = fmain.path .. "/schematics/cherry_tree_white.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -252,10 +285,10 @@ minetest.register_decoration({
     place_on = {"fmain:dirt_with_grass"},
     sidelen = 16,
     fill_ratio = 0.0075,
-    biomes = {"white_oak_forest"},
+    biomes = {"white_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/white_oak_tree_adj.mts",
+    schematic = fmain.path .. "/schematics/white_oak_tree.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -280,11 +313,11 @@ minetest.register_decoration({
     deco_type = "schematic",
     place_on = {"fmain:dirt_with_grass"},
     sidelen = 4,
-    fill_ratio = 0.0035,
+    fill_ratio = 0.0025,
     biomes = {"mixed_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/weeping_willow_tree_adj.mts",
+    schematic = fmain.path .. "/schematics/weeping_willow_tree.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -297,7 +330,7 @@ minetest.register_decoration({
     biomes = {"mixed_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/poplar_tree_adj.mts",
+    schematic = fmain.path .. "/schematics/poplar_tree_tall.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -310,7 +343,7 @@ minetest.register_decoration({
     biomes = {"mixed_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/poplar_tree_alt1_adj.mts",
+    schematic = fmain.path .. "/schematics/poplar_tree_short.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -323,7 +356,7 @@ minetest.register_decoration({
     biomes = {"mixed_forest"},
     y_max = 150,
     y_min = 1,
-    schematic = fmain.path .. "/schematics/maple_tree_green_adj.mts",
+    schematic = fmain.path .. "/schematics/maple_tree_green.mts",
     flags = "place_center_x, place_center_z",
     rotation = "random",
 })
@@ -456,25 +489,42 @@ minetest.register_ore({
 			octaves = 1,
 			persist = 0.0
 		},
-	})
---Lava generation placeholder
---[[
+})
+
 minetest.register_ore({
 		ore_type        = "blob",
-		ore             = "fmain:lava_source",
+		ore             = "fmain:marble",
 		wherein         = {"fmain:stone"},
 		clust_scarcity  = 16 * 16 * 16,
 		clust_size      = 5,
-		y_max           = -50,
+		y_max           = 31000,
 		y_min           = -31000,
 		noise_threshold = 0.0,
 		noise_params    = {
 			offset = 0.5,
 			scale = 0.2,
 			spread = {x = 5, y = 5, z = 5},
-			seed = -316,
+			seed = 17676,
+			octaves = 1,
+			persist = 0.0
+		},
+})
+
+minetest.register_ore({
+		ore_type        = "blob",
+		ore             = "fmain:slate",
+		wherein         = {"fmain:stone"},
+		clust_scarcity  = 16 * 16 * 16,
+		clust_size      = 5,
+		y_max           = 31000,
+		y_min           = -31000,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = 17676,
 			octaves = 1,
 			persist = 0.0
 		},
 	})
-]]
