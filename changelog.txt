@@ -1,5 +1,8 @@
 Finn's Game changelog
 
+0.5.1:
+	= Fixed a missing comma in fmain
+
 0.5.0: "Big Boy Biomes Pt 1":
 	=Final version for a little while while I take a break
 	+New Biomes:

@@ -183,7 +183,7 @@ minetest.register_node("fmain:water_source", {
 	buildable_to = true,
 	is_ground_content = false,
 	drop = "",
-	drowning = 1
+	drowning = 1,
 	liquidtype = "source",
 	liquid_alternative_flowing = "fmain:water_flowing",
 	liquid_alternative_source = "fmain:water_source",
